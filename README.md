@@ -2,7 +2,7 @@
 
 A new Flutter application.
 
-## Foundation of the App
+## Foundation of the App / UI Foundation Branch
 
 This project is a starting point for a Flutter application.
 
