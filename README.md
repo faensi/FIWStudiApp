@@ -1,8 +1,8 @@
-# iam_rich
+# FIW Studi_App
 
 A new Flutter application.
 
-## Getting Started
+## Foundation
 
 This project is a starting point for a Flutter application.
 
