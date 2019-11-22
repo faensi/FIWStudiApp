@@ -2,7 +2,7 @@
 
 A new Flutter application.
 
-## Foundation
+## Foundation of the App
 
 This project is a starting point for a Flutter application.
 
