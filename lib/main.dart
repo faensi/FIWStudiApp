@@ -12,7 +12,7 @@ void main() {
         ),
         body: Center(
           child: Image(
-            image: AssetImage(),
+            image: AssetImage(''),
           ),
         ),
       ),
