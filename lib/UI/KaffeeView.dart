@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Colors.dart';
 
+
 class KaffeeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,6 +11,7 @@ class KaffeeView extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text('KaffeeView'),
+          backgroundColor: studiAppGreen,
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
