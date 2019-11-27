@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'Colors.dart';
-import 'foundation.dart';
 
-// The main function is the starting point for all our Flutter apps.
-void main() => runApp(Startpage());
-/*
-void main() => runApp(
-      MaterialApp(
+class Startpage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Flutter Layout demo',
         home: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
@@ -142,7 +141,6 @@ void main() => runApp(
               ),
             ],
           ),
-        ),
-      ),
-    );
-*/
+        ));
+  }
+}
