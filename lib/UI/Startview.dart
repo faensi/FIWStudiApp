@@ -1,4 +1,8 @@
+import 'package:FIW_Studi_App/UI/FSnewsChangeView.dart';
+import 'package:FIW_Studi_App/UI/FSnewsView.dart';
+import 'package:FIW_Studi_App/UI/KaffeeChangeView.dart';
 import 'package:FIW_Studi_App/UI/KaffeeView.dart';
+import 'package:FIW_Studi_App/UI/VorlesungsplanerView.dart';
 import 'package:flutter/material.dart';
 import '../Colors.dart';
 
@@ -58,35 +62,11 @@ class Startview extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  print('Card Clicked');
-                },
-                child: new Card(
-                  clipBehavior: Clip.antiAlias,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      AspectRatio(
-                        aspectRatio: 18.0 / 11.0,
-                        child: Image.asset(''),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text('room occupancy'),
-                            SizedBox(height: 8.0),
-                            Text('x rooms are free'),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  print('Card Clicked');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => VorlesungsplanerView()),
+                  );
                 },
                 child: new Card(
                   clipBehavior: Clip.antiAlias,
@@ -114,7 +94,10 @@ class Startview extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  print('Card Clicked');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FSnewsView()),
+                  );
                 },
                 child: new Card(
                   clipBehavior: Clip.antiAlias,
@@ -142,7 +125,10 @@ class Startview extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  print('Card Clicked');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FSnewsChangeView()),
+                  );
                 },
                 child: new Card(
                   clipBehavior: Clip.antiAlias,
@@ -158,9 +144,40 @@ class Startview extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text('FS News Admin'),
+                            Text('FS-News Change'),
                             SizedBox(height: 8.0),
-                            Text('Create FS News'),
+                            Text('Latest Changes'),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => KaffeeChangeView()),
+                  );
+                },
+                child: new Card(
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      AspectRatio(
+                        aspectRatio: 18.0 / 11.0,
+                        child: Image.asset(''),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text('Kaffe Change'),
+                            SizedBox(height: 8.0),
+                            Text('Change Status'),
                           ],
                         ),
                       ),

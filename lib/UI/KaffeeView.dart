@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Colors.dart';
 
-
 class KaffeeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
