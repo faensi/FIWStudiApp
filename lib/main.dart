@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'Colors.dart';
-import 'foundation.dart';
+import 'Startview.dart';
 
 // The main function is the starting point for all our Flutter apps.
-void main() => runApp(Startpage());
+void main() => runApp(Startview());
 /*
 void main() => runApp(
       MaterialApp(
