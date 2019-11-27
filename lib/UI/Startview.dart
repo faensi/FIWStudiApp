@@ -1,11 +1,12 @@
+import 'package:FIW_Studi_App/UI/KaffeeView.dart';
 import 'package:flutter/material.dart';
-import 'Colors.dart';
+import '../Colors.dart';
 
 class Startview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Layout demo',
+        title: 'FIW Studi App',
         home: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
@@ -26,7 +27,10 @@ class Startview extends StatelessWidget {
             children: <Widget>[
               InkWell(
                 onTap: () {
-                  print('Card Clicked');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => KaffeeView()),
+                  );
                 },
                 child: new Card(
                   clipBehavior: Clip.antiAlias,

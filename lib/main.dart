@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'Colors.dart';
-import 'Startview.dart';
+import 'UI/Startview.dart';
 
 // The main function is the starting point for all our Flutter apps.
-void main() => runApp(Startview());
+void main() {
+  runApp(
+    MaterialApp(
+      title: 'FIW Studi App',
+      home: Startview(),
+    ),
+  );
+}
 /*
 void main() => runApp(
       MaterialApp(
