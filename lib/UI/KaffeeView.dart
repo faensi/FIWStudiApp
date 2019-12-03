@@ -9,7 +9,6 @@ class KaffeeView extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('KaffeeView'),
           backgroundColor: studiAppGreen,
           leading: IconButton(
             icon: Icon(
@@ -20,6 +19,30 @@ class KaffeeView extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
+        ),
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              backgroundColor: studiAppGreen,
+              floating: true,
+              expandedHeight: 300.0,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Image.asset('Images/Coffee_background.png',
+                    fit: BoxFit.cover),
+              ),
+            ),
+            SliverFixedExtentList(
+              itemExtent: 150.0,
+              delegate: SliverChildListDelegate([
+                Container(color: studiAppGreen),
+                Container(color: studiAppGrey),
+                Container(color: studiAppWhite),
+                Container(color: studiAppGreen),
+                Container(color: studiAppGrey),
+                Container(color: studiAppWhite),
+              ]),
+            )
+          ],
         ),
       ),
     );
