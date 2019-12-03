@@ -17,10 +17,13 @@ class VorlesungsplanerView extends StatelessWidget {
                         title: Text(''),
                         subtitle: Text(''),
                         leading: Icon(
-                          Icons.add_box,
+                          Icons.add_to_photos,
                           color: studiAppGreen,
                           size: 50,
                         ),
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
                       )
                     ],
                   ),
