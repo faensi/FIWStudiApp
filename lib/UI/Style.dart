@@ -13,3 +13,15 @@ const AppBarTextStyle = TextStyle(
   fontSize: MediumTextSize,
   color: studiAppWhite,
 );
+
+const TitleTextStyle = TextStyle(
+  fontFamily: FontNameDefault,
+  fontWeight: FontWeight.w300,
+  fontSize: LageTextSize,
+);
+
+const Body1TextStyle = TextStyle(
+    fontFamily: FontNameDefault,
+    fontWeight: FontWeight.w300,
+    fontSize: BodyTextSize,
+    color: Colors.black);

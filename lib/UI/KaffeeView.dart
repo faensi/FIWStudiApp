@@ -30,7 +30,7 @@ class KaffeeView extends StatelessWidget {
           expandedHeight: 300.0,
           flexibleSpace: FlexibleSpaceBar(
             centerTitle: true,
-            title: Text('KaffeeView'),
+            title: Text('KaffeeView', style: Theme.of(context).textTheme.title),
             background:
                 Image.asset('Images/Coffee_background.png', fit: BoxFit.cover),
           ),
@@ -64,11 +64,11 @@ class KaffeeView extends StatelessWidget {
         SliverFixedExtentList(
           itemExtent: 150.0,
           delegate: SliverChildListDelegate([
+            Container(color: studiApppurple),
             Container(color: studiAppGreen),
-            Container(color: studiAppGrey),
             Container(color: studiAppWhite),
+            Container(color: studiApppurple),
             Container(color: studiAppGreen),
-            Container(color: studiAppGrey),
             Container(color: studiAppWhite),
           ]),
         )
