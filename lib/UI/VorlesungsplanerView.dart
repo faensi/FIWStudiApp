@@ -3,6 +3,8 @@ import 'Startview.dart';
 import 'package:FIW_Studi_App/Colors.dart';
 
 class VorlesungsplanerView extends StatelessWidget {
+  static const double _hPad = 16;
+
   @override
   Widget build(BuildContext context) {
     List<SizedBox> _buildCards(int count) {
@@ -12,6 +14,8 @@ class VorlesungsplanerView extends StatelessWidget {
                 height: 120,
                 child: Card(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       ListTile(
                         title: Text(''),

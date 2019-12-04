@@ -22,3 +22,12 @@ flutter:
   uses-material-design: true
   assets:
     - Images/
+
+
+  fonts:
+    - family: Inconsolata
+      fonts:
+        - asset: Fonts/Inconsolata-Regular.ttf
+          weight: 300
+        - asset: Fonts/Inconsolata-Bold.ttf
+          weight: 600
