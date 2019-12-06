@@ -19,28 +19,45 @@ class Startview extends StatelessWidget {
             backgroundColor: studiAppGreen,
           ),
           drawer: new Drawer(
-              child: new ListView(children: <Widget>[
-            //fslogin --> true
-            new UserAccountsDrawerHeader(
-              accountName: new Text("Fachschaft"),
-              accountEmail: null,
-              currentAccountPicture: new CircleAvatar(
-                backgroundColor: Colors.purple,
-                child: new Text("FS"),
-              ),
+            child: new ListView(
+              children: <Widget>[
+                //fslogin --> true
+
+                new UserAccountsDrawerHeader(
+                  accountName: new Text("Fachschaft"),
+                  accountEmail: null,
+                  currentAccountPicture: new CircleAvatar(
+                    backgroundColor: Colors.purple,
+                    child: new Text("FS"),
+                  ),
+                ),
+                new ListTile(
+                  title: new Text("1. Kaffe"),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => KaffeeView()),
+                    );
+                  },
+                ),
+                new ListTile(
+                  title: new Text("2. Vorlesungsssplaner"),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => VorlesungsplanerView()),
+                    );
+                  },
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text("Close"),
+                  trailing: new Icon(Icons.close),
+                ),
+              ],
             ),
-            new ListTile(
-              title: new Text("1. Kaffe"),
-            ),
-            new ListTile(
-              title: new Text("2. Vorlesungsssplaner"),
-            ),
-            new Divider(),
-            new ListTile(
-              title: new Text("Close"),
-              trailing: new Icon(Icons.close),
-            )
-          ])),
+          ),
           body: GridView.count(
             crossAxisCount: 2,
             padding: EdgeInsets.all(16.0),
@@ -202,7 +219,7 @@ class Startview extends StatelessWidget {
                   ),
                 ),
               ),
-             ],
+            ],
           ),
         ));
   }
