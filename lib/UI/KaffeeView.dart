@@ -4,25 +4,26 @@ import 'package:FIW_Studi_App/Colors.dart';
 class KaffeeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return
-        /*return MaterialApp(
-      title: 'KaffeeView',
-      home: Scaffold(
-        backgroundColor: Colors.white,*/
-
-        /*appBar: AppBar(
-          backgroundColor: studiAppGreen,
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-              semanticLabel: 'Back',
+    return MaterialApp(
+        title: 'KaffeeView',
+        home: Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            backgroundColor: studiAppGreen,
+            leading: IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+                semanticLabel: 'Back',
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
           ),
-        ),*/
-        CustomScrollView(
+        ));
+  }
+}
+/*   CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
           backgroundColor: studiAppGreen,
@@ -34,8 +35,8 @@ class KaffeeView extends StatelessWidget {
             background:
                 Image.asset('Images/Coffee_background.png', fit: BoxFit.cover),
           ),
-        ),
-        /*SingleChildScrollView(
+        ),*/
+/*SingleChildScrollView(
               child: new Text(
                 'das ist ein Text in dem es um Kaffee Geht',
                 style: new TextStyle(
@@ -44,7 +45,7 @@ class KaffeeView extends StatelessWidget {
                 ),
               ),
             ),*/
-        /*SliverGrid(
+/*SliverGrid(
               gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200,
                 mainAxisSpacing: 10,
@@ -61,18 +62,16 @@ class KaffeeView extends StatelessWidget {
                 childCount: 5,
               ),
             )*/
-        SliverFixedExtentList(
+/*  SliverFixedExtentList(
           itemExtent: 150.0,
           delegate: SliverChildListDelegate([
-            Container(color: studiApppurple),
-            Container(color: studiAppGreen),
             Container(color: studiAppWhite),
-            Container(color: studiApppurple),
-            Container(color: studiAppGreen),
+            Container(color: studiAppWhite),
+            Container(color: studiAppWhite),
+            Container(color: studiAppWhite),
+            Container(color: studiAppWhite),
             Container(color: studiAppWhite),
           ]),
         )
       ],
-    );
-  }
-}
+    );*/
