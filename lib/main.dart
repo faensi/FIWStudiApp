@@ -6,12 +6,7 @@ import 'package:FIW_Studi_App/app.dart';
 
 // The main function is the starting point for all our Flutter apps.
 void main() {
-  runApp(
-    MaterialApp(
-      title: 'FIW Studi App',
-      home: App(),
-    ),
-  );
+  runApp(App());
 }
 /*
 void main() => runApp(

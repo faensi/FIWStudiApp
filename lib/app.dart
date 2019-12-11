@@ -9,15 +9,6 @@ class App extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       home: Startview(),
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          textTheme: TextTheme(title: AppBarTextStyle),
-        ),
-        textTheme: TextTheme(
-          title: TitleTextStyle,
-          body1: Body1TextStyle,
-        ),
-      ),
     );
   }
 }
