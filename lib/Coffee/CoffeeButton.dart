@@ -10,7 +10,7 @@ class CoffeeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {setState((){})},
+      onTap: () {},
       child: new Container(
         constraints: BoxConstraints.expand(
           height: 200,

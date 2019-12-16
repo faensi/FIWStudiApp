@@ -1,6 +1,6 @@
-import 'package:FIW_Studi_App/UI/CoffeeButton.dart';
-import 'package:FIW_Studi_App/UI/CoffeeHeadline.dart';
-import 'package:FIW_Studi_App/UI/CoffeeText.dart';
+import 'package:FIW_Studi_App/Coffee/CoffeeButton.dart';
+import 'package:FIW_Studi_App/Coffee/CoffeeHeadline.dart';
+import 'package:FIW_Studi_App/Coffee/CoffeeText.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Colors.dart';
 
@@ -29,7 +29,7 @@ class KaffeeView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CoffeeHeadline(),
-              // CoffeeBanner('Images/Coffee_background.png'),
+              CoffeeBanner('Images/Coffee_background.png'),
               CoffeeText(),
             ],
           ),
