@@ -1,3 +1,6 @@
+import 'package:FIW_Studi_App/UI/CoffeeButton.dart';
+import 'package:FIW_Studi_App/UI/CoffeeHeadline.dart';
+import 'package:FIW_Studi_App/UI/CoffeeText.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Colors.dart';
 
@@ -10,6 +13,7 @@ class KaffeeView extends StatelessWidget {
           backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: studiAppGreen,
+            title: Text("COFFEE"),
             leading: IconButton(
               icon: Icon(
                 Icons.arrow_back,
@@ -20,7 +24,15 @@ class KaffeeView extends StatelessWidget {
               },
             ),
           ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CoffeeHeadline(),
+              // CoffeeBanner('Images/Coffee_background.png'),
+              CoffeeText(),
+            ],
+          ),
         ));
   }
 }
-
