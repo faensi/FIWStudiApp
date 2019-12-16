@@ -2,7 +2,7 @@ import 'package:FIW_Studi_App/Coffee/CoffeeButton.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeHeadline.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeText.dart';
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/Colors.dart';
+import 'package:FIW_Studi_App/UI/Colors.dart';
 
 class KaffeeView extends StatelessWidget {
   @override

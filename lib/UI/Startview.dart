@@ -4,7 +4,7 @@ import 'package:FIW_Studi_App/Coffee/KaffeeView.dart';
 import 'package:FIW_Studi_App/UI/LoginForm.dart';
 import 'package:FIW_Studi_App/Vorlesungsplaner/VorlesungsplanerView.dart';
 import 'package:flutter/material.dart';
-import '../Colors.dart';
+import 'Colors.dart';
 
 class Startview extends StatelessWidget {
   @override

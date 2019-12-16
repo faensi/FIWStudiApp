@@ -1,4 +1,4 @@
-import 'package:FIW_Studi_App/Colors.dart';
+import 'package:FIW_Studi_App/UI/Colors.dart';
 import 'package:FIW_Studi_App/UI/Startview.dart';
 import 'package:flutter/material.dart';
 
