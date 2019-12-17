@@ -5,14 +5,7 @@ import 'package:FIW_Studi_App/Ui/LoginForm.dart';
 import 'package:flutter/material.dart';
 import 'Colors.dart';
 
-class Startview extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _StartCards();
-  }
-}
-
-class _StartCards extends State<Startview> {
+class Startview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

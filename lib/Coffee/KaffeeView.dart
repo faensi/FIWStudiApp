@@ -29,7 +29,7 @@ class KaffeeView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CoffeeHeadline(),
-              CoffeeBanner('Images/Coffee_background.png'),
+              CoffeeBanner(),
               CoffeeText(),
             ],
           ),

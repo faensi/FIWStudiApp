@@ -2,7 +2,7 @@ import 'package:FIW_Studi_App/UI/Startview.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Coffee/KaffeeView.dart';
 
-class CoffeeCard extends State<Startview> {
+class CoffeeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
