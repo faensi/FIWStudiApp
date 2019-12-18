@@ -4,6 +4,7 @@ import 'package:FIW_Studi_App/FSnews/FSnewsCard.dart';
 import 'package:FIW_Studi_App/Ui/LoginForm.dart';
 import 'package:flutter/material.dart';
 import 'UI/Colors.dart';
+import 'package:FIW_Studi_App/UI/NavDrawer.dart';
 
 class Startview extends StatelessWidget {
   @override
@@ -13,16 +14,10 @@ class Startview extends StatelessWidget {
         home: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
-              title: Text('FIW Studi App'),
-              backgroundColor: studiAppGreen,
-              leading: IconButton(
-                  icon: Icon(
-                    Icons.menu,
-                    semanticLabel: 'menu',
-                  ),
-                  onPressed: () {
-                    print('menu button');
-                  })),
+            title: Text('FIW Studi App'),
+            backgroundColor: studiAppGreen,
+          ),
+          drawer: NavDrawer(),
           body: GridView.count(
             crossAxisCount: 2,
             padding: EdgeInsets.all(16.0),
