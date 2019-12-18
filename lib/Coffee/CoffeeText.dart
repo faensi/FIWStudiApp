@@ -1,4 +1,3 @@
-import 'package:FIW_Studi_App/UI/Colors.dart';
 import 'package:flutter/material.dart';
 
 class CoffeeText extends StatelessWidget {
