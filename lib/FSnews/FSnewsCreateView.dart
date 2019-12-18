@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 
-class FSnewsView extends StatelessWidget {
+class FSnewsCreateView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'FSnewsView',
+      title: 'FSnewsDetailView',
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('FSnewsView'),
+          title: Text('FSnewsDetailView'),
           backgroundColor: studiAppGreen,
           leading: IconButton(
             icon: Icon(

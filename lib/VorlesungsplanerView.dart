@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../UI/Startview.dart';
+import 'Startview.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 
 class VorlesungsplanerView extends StatelessWidget {

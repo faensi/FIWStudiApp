@@ -1,5 +1,5 @@
 import 'package:FIW_Studi_App/UI/Colors.dart';
-import 'package:FIW_Studi_App/UI/Startview.dart';
+import 'package:FIW_Studi_App/Startview.dart';
 import 'package:flutter/material.dart';
 
 class CoffeeBanner extends StatefulWidget {
@@ -34,7 +34,5 @@ class CoffeeBannerState extends State<CoffeeBanner> {
         child: Image.asset(image1),
       ),
     );
-
-
   }
 }

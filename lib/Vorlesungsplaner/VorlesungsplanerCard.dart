@@ -1,4 +1,4 @@
-import 'package:FIW_Studi_App/Vorlesungsplaner/VorlesungsplanerView.dart';
+import 'package:FIW_Studi_App/VorlesungsplanerView.dart';
 import 'package:flutter/material.dart';
 
 class VorlesungsplanerCard extends StatelessWidget {
@@ -18,16 +18,16 @@ class VorlesungsplanerCard extends StatelessWidget {
           children: <Widget>[
             AspectRatio(
               aspectRatio: 18.0 / 11.0,
-              child: Image.asset('Images/Coffee_background.png'),
+              child: Image.asset('Images/Kalender.png'),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('Coffeemachine'),
+                  Text('Kalender'),
                   SizedBox(height: 8.0),
-                  Text('Status On/Off'),
+                  Text(''),
                 ],
               ),
             ),

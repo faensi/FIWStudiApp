@@ -1,10 +1,17 @@
-import 'package:FIW_Studi_App/Coffee/CoffeeButton.dart';
+import 'package:FIW_Studi_App/Coffee/CoffeeBanner.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeHeadline.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeText.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 
-class KaffeeView extends StatelessWidget {
+class KaffeeView extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return KaffeeViewState();
+  }
+}
+
+class KaffeeViewState extends State<KaffeeView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -1,6 +1,6 @@
 import 'package:FIW_Studi_App/UI/Style.dart';
 import 'package:flutter/material.dart';
-import 'Startview.dart';
+import '../Startview.dart';
 import 'Style.dart';
 
 class App extends StatelessWidget {

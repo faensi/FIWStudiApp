@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/FSnews/FSnewsView.dart';
+import 'package:FIW_Studi_App/FSnewsView.dart';
 
 class FSnewsCard extends StatelessWidget {
   @override
@@ -18,16 +18,16 @@ class FSnewsCard extends StatelessWidget {
           children: <Widget>[
             AspectRatio(
               aspectRatio: 18.0 / 11.0,
-              child: Image.asset('Images/Coffee_background.png'),
+              child: Image.asset('Images/news-636978_1280.jpg'),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('Coffeemachine'),
+                  Text('FSnews'),
                   SizedBox(height: 8.0),
-                  Text('Status On/Off'),
+                  Text('latest news'),
                 ],
               ),
             ),

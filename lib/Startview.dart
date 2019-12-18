@@ -3,7 +3,7 @@ import 'package:FIW_Studi_App/Vorlesungsplaner/VorlesungsplanerCard.dart';
 import 'package:FIW_Studi_App/FSnews/FSnewsCard.dart';
 import 'package:FIW_Studi_App/Ui/LoginForm.dart';
 import 'package:flutter/material.dart';
-import 'Colors.dart';
+import 'UI/Colors.dart';
 
 class Startview extends StatelessWidget {
   @override

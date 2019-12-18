@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'UI/Colors.dart';
-import 'UI/Startview.dart';
+import 'Colors.dart';
+import '../Startview.dart';
 import 'package:FIW_Studi_App/UI/app.dart';
 
 // The main function is the starting point for all our Flutter apps.
