@@ -1,12 +1,9 @@
-import 'package:FIW_Studi_App/UI/FSnewsChangeView.dart';
-import 'package:FIW_Studi_App/UI/FSnewsView.dart';
-import 'package:FIW_Studi_App/UI/KaffeeChangeView.dart';
-import 'package:FIW_Studi_App/UI/KaffeeView.dart';
-import 'package:FIW_Studi_App/UI/LoginForm.dart';
+import 'package:FIW_Studi_App/FSnewsView.dart';
+import 'package:FIW_Studi_App/KaffeeView.dart';
 import 'package:FIW_Studi_App/UI/NavDrawer.dart';
-import 'package:FIW_Studi_App/UI/VorlesungsplanerView.dart';
+import 'package:FIW_Studi_App/VorlesungsplanerView.dart';
 import 'package:flutter/material.dart';
-import '../Colors.dart';
+import 'package:FIW_Studi_App/UI/Colors.dart';
 
 const role =
     'test'; //später variable die beschreibt welche rolle der nutzer hat (admin, FSler oder Default)
@@ -115,68 +112,6 @@ class Startview extends StatelessWidget {
                             Text('FS-News'),
                             SizedBox(height: 8.0),
                             Text('newest news'),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => FSnewsChangeView()),
-                  );
-                },
-                child: new Card(
-                  clipBehavior: Clip.antiAlias,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      AspectRatio(
-                        aspectRatio: 18.0 / 11.0,
-                        child: Image.asset(''),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text('FS-News Change'),
-                            SizedBox(height: 8.0),
-                            Text('Latest Changes'),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => KaffeeChangeView()),
-                  );
-                },
-                child: new Card(
-                  clipBehavior: Clip.antiAlias,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      AspectRatio(
-                        aspectRatio: 18.0 / 11.0,
-                        child: Image.asset(''),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text('Kaffe Change'),
-                            SizedBox(height: 8.0),
-                            Text('Change Status'),
                           ],
                         ),
                       ),
