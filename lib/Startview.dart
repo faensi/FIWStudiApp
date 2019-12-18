@@ -33,29 +33,6 @@ class Startview extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => LoginForm()),
                   );
                 },
-                child: new Card(
-                  clipBehavior: Clip.antiAlias,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      AspectRatio(
-                        aspectRatio: 18.0 / 11.0,
-                        child: Image.asset(''),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text('Login'),
-                            SizedBox(height: 8.0),
-                            Text(''),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
               ),
             ],
           ),

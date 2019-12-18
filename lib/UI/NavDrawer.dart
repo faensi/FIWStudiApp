@@ -9,12 +9,12 @@ class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child:  ListView(
+      child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
           //fslogin --> true
 
-           UserAccountsDrawerHeader(
+          UserAccountsDrawerHeader(
             accountName: new Text("Fachschaft"),
             accountEmail: null,
             currentAccountPicture: new CircleAvatar(
@@ -25,7 +25,7 @@ class NavDrawer extends StatelessWidget {
               color: studiAppGreen,
             ),
           ),
-           ListTile(
+          ListTile(
             title: new Text("1. Kaffe"),
             onTap: () {
               Navigator.push(
@@ -44,7 +44,7 @@ class NavDrawer extends StatelessWidget {
             },
           ),
           new ListTile(
-            title: new Text("login"),
+            title: new Text("Login"),
             onTap: () {
               Navigator.push(
                 context,
@@ -52,8 +52,8 @@ class NavDrawer extends StatelessWidget {
               );
             },
           ),
-           Divider(),
-           ListTile(
+          Divider(),
+          ListTile(
             title: new Text("Close"),
             trailing: new Icon(Icons.close),
           ),
