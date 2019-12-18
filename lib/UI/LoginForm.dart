@@ -1,6 +1,6 @@
-import 'package:FIW_Studi_App/UI/Startview.dart';
+import 'package:FIW_Studi_App/Startview.dart';
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/Colors.dart';
+import 'package:FIW_Studi_App/UI/Colors.dart';
 
 class LoginForm extends StatelessWidget {
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Startview.dart';
-import 'package:FIW_Studi_App/Colors.dart';
+import 'package:FIW_Studi_App/UI/Colors.dart';
 
 class VorlesungsplanerView extends StatelessWidget {
   static const double _hPad = 16;
