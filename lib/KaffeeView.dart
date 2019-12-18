@@ -1,4 +1,4 @@
-import 'package:FIW_Studi_App/Coffee/CoffeeBanner.dart';
+import 'package:FIW_Studi_App/Coffee/Button.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeHeadline.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeText.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +36,7 @@ class KaffeeViewState extends State<KaffeeView> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CoffeeHeadline(),
-              CoffeeBanner(),
+              CoffeeButton(),
               CoffeeText(),
             ],
           ),

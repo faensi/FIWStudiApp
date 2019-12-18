@@ -14,7 +14,7 @@ class CoffeeHeadline extends StatelessWidget {
               "COFFEEBUTTON",
               style: TextStyle(fontSize: 32.0),
             ),
-          )
-        ]);
+          ),
+        ],);
   }
 }

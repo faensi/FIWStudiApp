@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'Startview.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 
 class VorlesungsplanerView extends StatelessWidget {
@@ -18,8 +17,8 @@ class VorlesungsplanerView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       ListTile(
-                        title: Text(''),
-                        subtitle: Text(''),
+                        title: Text('Julia'),
+                        subtitle: Text('studiert'),
                         leading: Icon(
                           Icons.add_to_photos,
                           color: studiAppGreen,

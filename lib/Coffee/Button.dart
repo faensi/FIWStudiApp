@@ -1,15 +1,13 @@
-import 'package:FIW_Studi_App/UI/Colors.dart';
-import 'package:FIW_Studi_App/Startview.dart';
 import 'package:flutter/material.dart';
 
-class CoffeeBanner extends StatefulWidget {
+class CoffeeButton extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return CoffeeBannerState();
+    return CoffeeButtonState();
   }
 }
 
-class CoffeeBannerState extends State<CoffeeBanner> {
+class CoffeeButtonState extends State<CoffeeButton> {
   //final String _assetPath;
 
 //  CoffeeBannerState(this._assetPath);

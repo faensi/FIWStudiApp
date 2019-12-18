@@ -1,7 +1,6 @@
-import 'package:FIW_Studi_App/Startview.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/KaffeeView.dart';
-import 'package:FIW_Studi_App/Coffee/CoffeeBanner.dart';
+import 'package:FIW_Studi_App/Coffee/Button.dart';
 
 class CoffeeCard extends StatefulWidget {
   @override
@@ -11,7 +10,7 @@ class CoffeeCard extends StatefulWidget {
 }
 
 class CoffeeCardState extends State<CoffeeCard> {
-  String image = CoffeeBannerState().image1;
+  String image = CoffeeButtonState().image1;
 
   @override
   Widget build(BuildContext context) {

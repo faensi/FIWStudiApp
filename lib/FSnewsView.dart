@@ -1,7 +1,6 @@
-import 'package:FIW_Studi_App/FSnews/FSnewsCreateView.dart';
+import 'package:FIW_Studi_App/FSnewsCreateView.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
-import 'package:FIW_Studi_App/FSnews/FSnewsNews.dart';
 
 class FSnewsView extends StatefulWidget {
   @override
