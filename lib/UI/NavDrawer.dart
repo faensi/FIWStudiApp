@@ -56,6 +56,9 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             title: new Text("Close"),
             trailing: new Icon(Icons.close),
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
         ],
       ),
