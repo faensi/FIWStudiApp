@@ -3,9 +3,13 @@ import 'package:FIW_Studi_App/UI/FSnewsView.dart';
 import 'package:FIW_Studi_App/UI/KaffeeChangeView.dart';
 import 'package:FIW_Studi_App/UI/KaffeeView.dart';
 import 'package:FIW_Studi_App/UI/LoginForm.dart';
+import 'package:FIW_Studi_App/UI/NavDrawer.dart';
 import 'package:FIW_Studi_App/UI/VorlesungsplanerView.dart';
 import 'package:flutter/material.dart';
 import '../Colors.dart';
+
+const role =
+    'test'; //später variable die beschreibt welche rolle der nutzer hat (admin, FSler oder Default)
 
 class Startview extends StatelessWidget {
   @override
@@ -18,46 +22,7 @@ class Startview extends StatelessWidget {
             title: Text('FIW Studi App'),
             backgroundColor: studiAppGreen,
           ),
-          drawer: new Drawer(
-            child: new ListView(
-              children: <Widget>[
-                //fslogin --> true
-
-                new UserAccountsDrawerHeader(
-                  accountName: new Text("Fachschaft"),
-                  accountEmail: null,
-                  currentAccountPicture: new CircleAvatar(
-                    backgroundColor: Colors.purple,
-                    child: new Text("FS"),
-                  ),
-                ),
-                new ListTile(
-                  title: new Text("1. Kaffe"),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => KaffeeView()),
-                    );
-                  },
-                ),
-                new ListTile(
-                  title: new Text("2. Vorlesungsssplaner"),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => VorlesungsplanerView()),
-                    );
-                  },
-                ),
-                new Divider(),
-                new ListTile(
-                  title: new Text("Close"),
-                  trailing: new Icon(Icons.close),
-                ),
-              ],
-            ),
-          ),
+          drawer: NavDrawer(),
           body: GridView.count(
             crossAxisCount: 2,
             padding: EdgeInsets.all(16.0),
