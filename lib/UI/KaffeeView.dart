@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/Colors.dart';
+import 'package:FIW_Studi_App/UI/Colors.dart';
 
 class KaffeeView extends StatelessWidget {
   @override

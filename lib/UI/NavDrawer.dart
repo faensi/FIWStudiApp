@@ -1,11 +1,7 @@
-import 'package:FIW_Studi_App/UI/FSnewsChangeView.dart';
-import 'package:FIW_Studi_App/UI/FSnewsView.dart';
-import 'package:FIW_Studi_App/UI/KaffeeChangeView.dart';
 import 'package:FIW_Studi_App/UI/KaffeeView.dart';
-import 'package:FIW_Studi_App/UI/LoginForm.dart';
-import 'package:FIW_Studi_App/UI/VorlesungsplanerView.dart';
+
+import 'package:FIW_Studi_App/VorlesungsplanerView.dart';
 import 'package:flutter/material.dart';
-import '../Colors.dart';
 
 class NavDrawer extends StatelessWidget {
   @override
