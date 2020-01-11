@@ -14,6 +14,7 @@ class FSnewsCard extends StatelessWidget {
       child: new Card(
         clipBehavior: Clip.antiAlias,
         child: Column(
+          // Anordnung der Elemente, entweder Horizontal oder Vertikal
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             AspectRatio(
@@ -21,11 +22,14 @@ class FSnewsCard extends StatelessWidget {
               child: Image.asset('Images/news-636978_1280.jpg'),
             ),
             Padding(
+              // genaue Eckdaten von von allen seiten wie groß das feld sein soll
               padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
               child: Column(
+                // Anordnung der Elemente, entweder Horizontal oder Vertikal
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text('FSnews'),
+                  // das leere Feld zwischen den Zeilen die, diese trennt
                   SizedBox(height: 8.0),
                   Text('latest news'),
                 ],

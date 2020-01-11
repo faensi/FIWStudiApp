@@ -8,9 +8,11 @@ class FSnewsCreateView extends StatelessWidget {
       title: 'FSnewsDetailView',
       home: Scaffold(
         backgroundColor: Colors.white,
+        // beschreibt die Appbar
         appBar: AppBar(
           title: Text('FSnewsDetailView'),
           backgroundColor: studiAppGreen,
+          //beschreibt den Zurückpfeil oben links in der app
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
@@ -37,11 +39,13 @@ class FSnewsCreateView extends StatelessWidget {
               ),
               SizedBox(height: 80.0),
               TextField(
+                // beschreibt ein Feld in das Text bis zu einer Länge von 64 zeichen eingegeben werden können
                 keyboardType: TextInputType.multiline,
                 style: TextStyle(fontSize: 20),
                 maxLength: 64,
               ),
               TextField(
+                //beschreibt ein Feld in das Text in nicht endlicher Länge eingegeben werden kann
                 keyboardType: TextInputType.multiline,
                 maxLines: null,
               ),

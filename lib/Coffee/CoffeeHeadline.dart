@@ -5,16 +5,20 @@ class CoffeeHeadline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            padding: const EdgeInsets.fromLTRB(_hPad, 32.0, _hPad, 4.0),
-            child: Text(
-              "COFFEEBUTTON",
-              style: TextStyle(fontSize: 32.0),
-            ),
+      // Anordnung der Elemente, entweder Horizontal oder Vertikal + die Startposition
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+          // genaue Eckdaten von von allen seiten wie groß das feld sein soll
+          padding: const EdgeInsets.fromLTRB(_hPad, 32.0, _hPad, 4.0),
+          child: Text(
+            "COFFEEBUTTON",
+            // fontsize ist die Beschreibung der Schriftgröße
+            style: TextStyle(fontSize: 32.0),
           ),
-        ],);
+        ),
+      ],
+    );
   }
 }
