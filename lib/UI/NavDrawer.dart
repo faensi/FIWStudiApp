@@ -26,7 +26,7 @@ class NavDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: new Text("1. Kaffe"),
+            title: new Text("1. Kaffee"),
             onTap: () {
               Navigator.push(
                 context,
@@ -43,7 +43,7 @@ class NavDrawer extends StatelessWidget {
               );
             },
           ),
-          new ListTile(
+          ListTile(
             title: new Text("Login"),
             onTap: () {
               Navigator.push(

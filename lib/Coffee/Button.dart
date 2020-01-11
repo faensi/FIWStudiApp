@@ -15,11 +15,13 @@ class CoffeeButtonState extends State<CoffeeButton> {
 
   @override
   Widget build(BuildContext context) {
+    // erzeugt Container mit größe 200x200 Pixel für den KaffeeButton
     return Container(
       constraints: BoxConstraints.expand(
         height: 200,
         width: 200,
       ),
+      // Knopf ändert auf Druck den Status und soll diesen Später an die Datenbank senden
       child: GestureDetector(
         onTap: () => setState(() {
           if (image1 == "Images/Coffee_background.png")

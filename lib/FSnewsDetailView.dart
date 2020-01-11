@@ -1,15 +1,7 @@
-import 'package:FIW_Studi_App/FSnewsCreateView.dart';
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/UI/Colors.dart';
+import 'UI/Colors.dart';
 
-class FSnewsView extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return FSnewsViewState();
-  }
-}
-
-class FSnewsViewState extends State<FSnewsView> {
+class FSnewsViewState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,16 +24,9 @@ class FSnewsViewState extends State<FSnewsView> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [],
-        ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => FSnewsCreateView()),
-            );
-          },
+          children: [
+            //FSnewsNews("Title", "News"),
+          ],
         ),
       ),
     );
