@@ -35,6 +35,7 @@ class KaffeeViewState extends State<KaffeeView> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              // hier werden nurnoch die im Ordner Coffee erstellten Klassen aufgerufen.
               CoffeeHeadline(),
               CoffeeButton(),
               CoffeeText(),

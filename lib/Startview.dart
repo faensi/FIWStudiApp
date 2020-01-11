@@ -19,6 +19,7 @@ class Startview extends StatelessWidget {
           ),
           drawer: NavDrawer(),
           body: GridView.count(
+            //beschreibt die anzahl der Spalten der Angezeigten Karten
             crossAxisCount: 2,
             padding: EdgeInsets.all(16.0),
             childAspectRatio: 8.0 / 9.0,
@@ -26,14 +27,6 @@ class Startview extends StatelessWidget {
               CoffeeCard(),
               FSnewsCard(),
               //VorlesungsplanerCard(),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginForm()),
-                  );
-                },
-              ),
             ],
           ),
         ));

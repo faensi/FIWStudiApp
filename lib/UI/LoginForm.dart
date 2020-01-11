@@ -1,3 +1,4 @@
+import 'package:FIW_Studi_App/UI/NavDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 
@@ -52,7 +53,9 @@ class LoginForm extends StatelessWidget {
                 children: <Widget>[
                   FlatButton(
                     child: Text('Cancel'),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(login);
+                    },
                   ),
                   RaisedButton(
                     child: Text('Next'),
