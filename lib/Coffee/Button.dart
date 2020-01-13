@@ -33,10 +33,10 @@ class CoffeeButtonState extends State<CoffeeButton> {
                 status = "Kaffee gemacht";
               } else if (image1 == "Images/Coffeeimage.png") {
                 image1 = "Images/KaffeGrey.png";
-                status = "Kaffee läuft durch";
+                status = "Kaffee leer";
               } else if (image1 == "Images/KaffeGrey.png") {
                 image1 = "Images/Coffee_background.png";
-                status = "Kaffeemaschine sauber";
+                status = "Kaffeemaschine aus";
               }
             }),
             child: Image.asset(image1),

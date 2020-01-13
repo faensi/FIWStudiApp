@@ -15,7 +15,7 @@ class CoffeeHeadline extends StatelessWidget {
           child: Text(
             "Kaffeestatus",
             // fontsize ist die Beschreibung der Schriftgröße
-            style: TextStyle(fontSize: 32.0),
+            style: TextStyle(fontSize: 36.0),
           ),
         ),
       ],

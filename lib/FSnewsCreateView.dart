@@ -37,18 +37,24 @@ class FSnewsCreateView extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 80.0),
+              SizedBox(height: 64.0),
               TextField(
+                decoration: InputDecoration(
+                  hintText: "News-Title",
+                ),
                 // beschreibt ein Feld in das Text bis zu einer Länge von 64 zeichen eingegeben werden können
                 keyboardType: TextInputType.multiline,
                 style: TextStyle(fontSize: 20),
                 maxLength: 64,
               ),
+              Divider(height: 12),
               TextField(
+                decoration: InputDecoration(hintText: "News-Textyxcbv<c"),
                 //beschreibt ein Feld in das Text in nicht endlicher Länge eingegeben werden kann
                 keyboardType: TextInputType.multiline,
                 maxLines: null,
               ),
+              Divider(height: 16),
               RaisedButton(
                 child: Text("Create"),
                 onPressed: () {},
