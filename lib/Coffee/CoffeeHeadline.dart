@@ -11,9 +11,9 @@ class CoffeeHeadline extends StatelessWidget {
       children: [
         Container(
           // genaue Eckdaten von von allen seiten wie groß das feld sein soll
-          padding: const EdgeInsets.fromLTRB(_hPad, 32.0, _hPad, 4.0),
+          padding: const EdgeInsets.fromLTRB(_hPad, 12.0, _hPad, 4.0),
           child: Text(
-            "COFFEEBUTTON",
+            "Kaffeestatus",
             // fontsize ist die Beschreibung der Schriftgröße
             style: TextStyle(fontSize: 32.0),
           ),

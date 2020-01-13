@@ -14,7 +14,7 @@ class CoffeeText extends StatelessWidget {
             // genaue Eckdaten von von allen seiten wie groß das feld sein soll
             padding: const EdgeInsets.fromLTRB(_hPad, 32.0, _hPad, 4.0),
             child: Text(
-              "dhfsifsitatueatuii iztdz itdutrsi tdout ztsdzrszrsozts",
+              "Der Coffee-Status zeigt ob Kaffee gemacht ist, der Kaffee durchläuft, die Kaffeemaschine sauber ist oder eine Funktionsstörung vorliegt",
               // fontsize ist die Beschreibung der Schriftgröße
               style: TextStyle(fontSize: 16.0),
             ),

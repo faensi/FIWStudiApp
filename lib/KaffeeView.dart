@@ -37,6 +37,9 @@ class KaffeeViewState extends State<KaffeeView> {
             children: [
               // hier werden nurnoch die im Ordner Coffee erstellten Klassen aufgerufen.
               CoffeeHeadline(),
+              Divider(
+                height: 40,
+              ),
               CoffeeButton(),
               CoffeeText(),
             ],
