@@ -48,7 +48,7 @@ class CoffeeButtonState extends State<CoffeeButton> {
         Container(
           child: Text(
             status,
-            style: TextStyle(fontSize: 18, fontWeight: ),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
         )
       ],
