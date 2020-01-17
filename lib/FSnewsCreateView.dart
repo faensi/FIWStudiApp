@@ -49,7 +49,7 @@ class FSnewsCreateView extends StatelessWidget {
               ),
               Divider(height: 12),
               TextField(
-                decoration: InputDecoration(hintText: "News-Textyxcbv<c"),
+                decoration: InputDecoration(hintText: "News-Text"),
                 //beschreibt ein Feld in das Text in nicht endlicher Länge eingegeben werden kann
                 keyboardType: TextInputType.multiline,
                 maxLines: null,
