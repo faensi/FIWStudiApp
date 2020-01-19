@@ -10,7 +10,7 @@ class LoginForm extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('LoginForm'),
+          title: Text('Login'),
           backgroundColor: studiAppGreen,
           leading: IconButton(
             icon: Icon(
@@ -31,7 +31,7 @@ class LoginForm extends StatelessWidget {
                 children: <Widget>[
                   Image.asset(''),
                   SizedBox(height: 16.0),
-                  Text('Login'),
+                  Text('Admin Login für Fachschaftler'),
                 ],
               ),
               SizedBox(height: 120),
