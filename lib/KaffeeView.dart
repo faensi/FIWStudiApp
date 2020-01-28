@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:FIW_Studi_App/Coffee/Button.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeHeadline.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeText.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
+import 'package:FIW_Studi_App/Coffee/Post.dart';
 
 class KaffeeView extends StatefulWidget {
   @override
@@ -42,6 +45,12 @@ class KaffeeViewState extends State<KaffeeView> {
               ),
               CoffeeButton(),
               CoffeeText(),
+              new RaisedButton(
+                onPressed: () async {
+                  postRequest();
+                },
+                child: const Text("Create"),
+              )
             ],
           ),
         ));
