@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/KaffeeView.dart';
 import 'package:FIW_Studi_App/Coffee/Button.dart';
-import 'package:FIW_Studi_App/Coffee/CoffeeState.dart';
 
 class CoffeeCard extends StatefulWidget {
   @override

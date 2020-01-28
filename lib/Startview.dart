@@ -5,7 +5,6 @@ import 'package:FIW_Studi_App/Ui/LoginForm.dart';
 import 'package:flutter/material.dart';
 import 'UI/Colors.dart';
 import 'package:FIW_Studi_App/UI/NavDrawer.dart';
-import 'package:FIW_Studi_App/Coffee/CoffeeState.dart';
 
 class Startview extends StatelessWidget {
   @override
