@@ -11,7 +11,6 @@ class CoffeeCard extends StatefulWidget {
 
 class CoffeeCardState extends State<CoffeeCard> {
   String image = CoffeeButtonState().image1;
-
   @override
   Widget build(BuildContext context) {
     // macht die "Card" anklickbar
