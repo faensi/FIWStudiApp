@@ -1,4 +1,4 @@
-
+/*
 static String getCourseFromMatrikelNumber(int matrikelNumber){
 String studiengang =  "error: matrikel-number format is not correct.";
 if(matrikelNumber.toString().length==7) {
@@ -17,3 +17,4 @@ else{
 return studiengang;
 }
 }
+*/
