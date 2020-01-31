@@ -1,6 +1,5 @@
+import 'package:FIW_Studi_App/UI/rooms.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'Colors.dart';
 import 'UI/Startview.dart';
 
 // The main function is the starting point for all our Flutter apps.
@@ -11,6 +10,24 @@ void main() {
       home: Startview(),
     ),
   );
+}
+
+void rooms() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Study Rooms',
+      theme: ThemeData(
+        primaryColor: new Color(0xFF66BB6A),
+        backgroundColor: new Color(0xFFC8E6C9),
+      ),
+      home: Rooms(),
+    );
+  }
 }
 /*
 void main() => runApp(
