@@ -7,7 +7,7 @@ Future<http.Response> postRequest() async {
   var ISO8601time =
       DateTime.now().toIso8601String().substring(0, 19) + "+01:00";
   //ISO8601 implementation only meant for +01:00 timezone
-  Map data = {"state": 30, "statusTime": ISO8601time, "userName": "TestUserX"};
+  Map data = {"state": 20, "statusTime": ISO8601time, "userName": "TestUserX"};
   //noch hardcoded bitte aendern
 
   //encode Map to JSON

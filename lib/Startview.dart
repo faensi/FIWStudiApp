@@ -26,6 +26,7 @@ class Startview extends StatelessWidget {
             children: <Widget>[
               CoffeeCard(),
               FSnewsCard(),
+              VorlesungsplanerCard(),
               //VorlesungsplanerCard(),
             ],
           ),

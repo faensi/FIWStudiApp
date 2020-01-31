@@ -17,8 +17,8 @@ class VorlesungsplanerView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       ListTile(
-                        title: Text('Julia'),
-                        subtitle: Text('studiert'),
+                        title: Text('Vorlesungstitel'),
+                        subtitle: Text('Kurze beschreibung'),
                         leading: Icon(
                           Icons.add_to_photos,
                           color: studiAppGreen,

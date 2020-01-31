@@ -19,7 +19,7 @@ class CoffeeButtonState extends State<CoffeeButton> {
 
   //  CoffeeBannerState(this._assetPath);
   String image1 = "Images/Coffee_background.png";
-  String status = "Kaffee gemacht!";
+  String status = "Tippe auf das Bild, um den Status zu erfahren";
   final String url =
       "https://apistaging.fiw.fhws.de/studi-app/api/coffee-machine/getCurrentState";
   var data;
@@ -50,42 +50,47 @@ class CoffeeButtonState extends State<CoffeeButton> {
             height: 200,
             width: 200,
           ),
-          child: GestureDetector(
-            onTap: () => setState(() {
-              getCData();
-              if (state == "10") {
-                image1 = "Images/Coffeeimage.png";
-                status = "Kaffee gemacht" +
-                    "\n" +
-                    DateTime.parse(lastTime).toString();
-              } else if (state == "20") {
-                image1 = "Images/KaffeGrey.png";
-                status =
-                    "Kaffee leer" + "\n" + DateTime.parse(lastTime).toString();
-              } else if (state == "30") {
-                image1 = "Images/Coffee_background.png";
-                status = "Kaffeemaschine aus" +
-                    "\n" +
-                    DateTime.parse(lastTime).toString();
-              } else if (state == "40") {
-                image1 = "Images/Coffee_background.png";
-                status = "Kaffeemaschine defekt" +
-                    "\n" +
-                    DateTime.parse(lastTime).toString();
-              } else {
-                print("Error");
-              }
-            }),
-            child: Image.asset(image1),
+          child: Center(
+            child: GestureDetector(
+              onTap: () => setState(() {
+                getCData();
+                if (state == "10") {
+                  image1 = "Images/Coffeeimage.png";
+                  status = "Kaffee gemacht" +
+                      "\n" +
+                      DateTime.parse(lastTime).toString();
+                } else if (state == "20") {
+                  image1 = "Images/KaffeGrey.png";
+                  status = "Kaffeemaschine aus" +
+                      "\n" +
+                      DateTime.parse(lastTime).toUtc().toString();
+                } else if (state == "30") {
+                  image1 = "Images/Coffee_background.png";
+                  status = "Kaffeemaschine leer" +
+                      "\n" +
+                      DateTime.parse(lastTime).toString();
+                } else if (state == "40") {
+                  image1 = "Images/Coffee_background.png";
+                  status = "Kaffeemaschine defekt" +
+                      "\n" +
+                      DateTime.parse(lastTime).toString();
+                } else {
+                  print("Error");
+                }
+              }),
+              child: Image.asset(image1),
+            ),
           ),
         ),
         SizedBox(
           height: 14,
         ),
         Container(
-          child: Text(
-            status,
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          child: Center(
+            child: Text(
+              status,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
           ),
         )
       ],

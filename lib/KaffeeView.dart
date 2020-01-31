@@ -45,6 +45,9 @@ class KaffeeViewState extends State<KaffeeView> {
               ),
               CoffeeButton(),
               CoffeeText(),
+              Divider(
+                height: 20,
+              ),
               new RaisedButton(
                 onPressed: () async {
                   postRequest();
