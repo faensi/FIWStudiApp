@@ -28,10 +28,10 @@ class FSnewsCard extends StatelessWidget {
                 // Anordnung der Elemente, entweder Horizontal oder Vertikal
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('FSnews'),
-                  // das leere Feld zwischen den Zeilen die, diese trennt
-                  SizedBox(height: 8.0),
-                  Text('latest news'),
+                  Divider(
+                    height: 20,
+                  ),
+                  Center(child: Text('FSnews')),
                 ],
               ),
             ),

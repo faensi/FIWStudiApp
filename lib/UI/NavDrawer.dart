@@ -1,3 +1,4 @@
+import 'package:FIW_Studi_App/FSnewsView.dart';
 import 'package:FIW_Studi_App/KaffeeView.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 import 'package:FIW_Studi_App/VorlesungsplanerView.dart';
@@ -29,7 +30,7 @@ class NavDrawer extends StatelessWidget {
           ),
           //beschreibt ein Element der ListView
           ListTile(
-            title: new Text("1. Kaffee"),
+            title: new Text("1. Kaffeemaschine"),
             onTap: () {
               Navigator.push(
                 context,
@@ -38,7 +39,16 @@ class NavDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: new Text("2. Vorlesungsssplaner"),
+            title: new Text("2. FS-News"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FSnewsView()),
+              );
+            },
+          ),
+          ListTile(
+            title: new Text("3. Vorlesungsssplaner"),
             onTap: () {
               Navigator.push(
                 context,
