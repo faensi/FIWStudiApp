@@ -53,17 +53,16 @@ class CoffeeButtonState extends State<CoffeeButton> {
                 getCData();
                 if (cState == "10") {
                   image1 = "Images/Coffeeimage.png";
-                  status = "Kaffee gemacht" + "\n" + cLastTime.toString();
+                  status = "Kaffee gemacht" + "\n" + displayTime();
                 } else if (cState == "20") {
                   image1 = "Images/KaffeGrey.png";
-                  status = "Kaffeemaschine aus" + "\n" + cLastTime.toString();
+                  status = "Kaffeemaschine aus" + "\n" + displayTime();
                 } else if (cState == "30") {
                   image1 = "Images/Coffee_background.png";
-                  status = "Kaffeemaschine leer" + "\n" + cLastTime.toString();
+                  status = "Kaffeemaschine leer" + "\n" + displayTime();
                 } else if (cState == "40") {
                   image1 = "Images/Coffee_background.png";
-                  status =
-                      "Kaffeemaschine defekt" + "\n" + cLastTime.toString();
+                  status = "Kaffeemaschine defekt" + "\n" + displayTime();
                 } else {
                   print("Error");
                 }
@@ -79,6 +78,7 @@ class CoffeeButtonState extends State<CoffeeButton> {
           child: Center(
             child: Text(
               status,
+              textAlign: TextAlign.center,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ),
