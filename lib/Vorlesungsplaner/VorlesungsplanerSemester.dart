@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 import 'package:FIW_Studi_App/Vorlesungsplaner/VorlesungsplanerDetail.dart';
+import 'package:FIW_Studi_App/globals.dart' as globals;
 
 class VorlesungsplanerSemester extends StatelessWidget {
-  final List<String> semester = ["1", "2", "3", "4", "5", "6", "7"];
+  final List<int> semesterList = [1, 2, 3, 4, 5, 6, 7];
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class VorlesungsplanerSemester extends StatelessWidget {
                 children: <Widget>[
                   InkWell(
                     onTap: () {
+                      globals.semester = semesterList[index];
                       Navigator.push(
                         context, // Hier Semestervariable abändern.
                         MaterialPageRoute(
@@ -34,7 +36,8 @@ class VorlesungsplanerSemester extends StatelessWidget {
                           padding: EdgeInsets.all(15.0),
                           child: Row(
                             children: <Widget>[
-                              Text(semester[index] + ". Semester",
+                              Text(
+                                  semesterList[index].toString() + ". Semester",
                                   style: TextStyle(
                                       fontSize: 18.0, color: Colors.black87)),
                             ],

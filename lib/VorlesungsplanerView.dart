@@ -1,9 +1,10 @@
 import 'package:FIW_Studi_App/Vorlesungsplaner/VorlesungsplanerSemester.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
+import 'package:FIW_Studi_App/globals.dart' as globals;
 
 class VorlesungsplanerView extends StatelessWidget {
-  final List<String> studiengaenge = ["BEC", "INF", "WINF", "MINF"];
+  final List<String> studiengaenge = ["bec", "inf", "bwi", "mis"];
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +23,9 @@ class VorlesungsplanerView extends StatelessWidget {
                   children: <Widget>[
                     InkWell(
                       onTap: () {
+                        globals.degreeProgramm = studiengaenge[index];
                         Navigator.push(
-                          context, // Hier Semestervariable abändern.
+                          context,
                           MaterialPageRoute(
                             builder: (context) => VorlesungsplanerSemester(),
                           ),

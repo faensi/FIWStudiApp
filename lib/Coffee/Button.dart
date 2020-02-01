@@ -63,7 +63,7 @@ class CoffeeButtonState extends State<CoffeeButton> {
                   image1 = "Images/KaffeGrey.png";
                   status = "Kaffeemaschine aus" +
                       "\n" +
-                      DateTime.parse(lastTime).toUtc().toString();
+                      DateTime.parse(lastTime).toString();
                 } else if (state == "30") {
                   image1 = "Images/Coffee_background.png";
                   status = "Kaffeemaschine leer" +

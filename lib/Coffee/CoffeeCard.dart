@@ -40,10 +40,10 @@ class CoffeeCardState extends State<CoffeeCard> {
                 // Anordnung der Elemente, entweder Horizontal oder Vertikal
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('Coffeemachine'),
-                  // das leere Feld zwischen den Zeilen die, diese trennt
-                  SizedBox(height: 8.0),
-                  Text('Status On/Off'),
+                  Divider(
+                    height: 20,
+                  ),
+                  Center(child: Text('Kaffeemaschine')),
                 ],
               ),
             ),

@@ -22,11 +22,10 @@ class VorlesungsplanerCard extends StatelessWidget {
             Padding(
               padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text('Vorlesungsplaner'),
-                  SizedBox(height: 8.0),
-                  Text(''),
+                  Center(child: Text('Vorlesungsplaner')),
                 ],
               ),
             ),
