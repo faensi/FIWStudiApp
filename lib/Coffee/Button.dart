@@ -6,6 +6,7 @@ import 'package:FIW_Studi_App/Coffee/Post.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:FIW_Studi_App/globals.dart';
 
 class CoffeeButton extends StatefulWidget {
   @override
@@ -22,18 +23,14 @@ class CoffeeButtonState extends State<CoffeeButton> {
   String status = "Tippe auf das Bild, um den Status zu erfahren";
   final String url =
       "https://apistaging.fiw.fhws.de/studi-app/api/coffee-machine/getCurrentState";
-  var data;
-  var state;
-  var lastTime;
-  var userName;
 
   Future<String> getCData() async {
     http.Response response = await http
         .get(Uri.encodeFull(url), headers: {"Accept": "application/json"});
-    data = jsonDecode(response.body);
-    state = data["state"].toString();
-    lastTime = data["statusTime"];
-    userName = data[
+    cData = jsonDecode(response.body);
+    cState = cData["state"].toString();
+    cLastTime = DateTime.parse(cData["statusTime"]);
+    cUserName = cData[
         "userName"]; //momentan nicht in Verwendung; hier Aufgrund der Datenabnk
     return "Success!";
   }
@@ -54,26 +51,19 @@ class CoffeeButtonState extends State<CoffeeButton> {
             child: GestureDetector(
               onTap: () => setState(() {
                 getCData();
-                if (state == "10") {
+                if (cState == "10") {
                   image1 = "Images/Coffeeimage.png";
-                  status = "Kaffee gemacht" +
-                      "\n" +
-                      DateTime.parse(lastTime).toString();
-                } else if (state == "20") {
+                  status = "Kaffee gemacht" + "\n" + cLastTime.toString();
+                } else if (cState == "20") {
                   image1 = "Images/KaffeGrey.png";
-                  status = "Kaffeemaschine aus" +
-                      "\n" +
-                      DateTime.parse(lastTime).toString();
-                } else if (state == "30") {
+                  status = "Kaffeemaschine aus" + "\n" + cLastTime.toString();
+                } else if (cState == "30") {
                   image1 = "Images/Coffee_background.png";
-                  status = "Kaffeemaschine leer" +
-                      "\n" +
-                      DateTime.parse(lastTime).toString();
-                } else if (state == "40") {
+                  status = "Kaffeemaschine leer" + "\n" + cLastTime.toString();
+                } else if (cState == "40") {
                   image1 = "Images/Coffee_background.png";
-                  status = "Kaffeemaschine defekt" +
-                      "\n" +
-                      DateTime.parse(lastTime).toString();
+                  status =
+                      "Kaffeemaschine defekt" + "\n" + cLastTime.toString();
                 } else {
                   print("Error");
                 }
