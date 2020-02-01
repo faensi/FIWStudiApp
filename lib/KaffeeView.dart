@@ -6,6 +6,7 @@ import 'package:FIW_Studi_App/Coffee/CoffeeText.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 import 'package:FIW_Studi_App/Coffee/Post.dart';
+import 'package:FIW_Studi_App/globals.dart' as globals;
 
 class KaffeeView extends StatefulWidget {
   @override
@@ -48,12 +49,36 @@ class KaffeeViewState extends State<KaffeeView> {
               Divider(
                 height: 20,
               ),
-              new RaisedButton(
-                onPressed: () async {
-                  postRequest();
-                },
-                child: const Text("Create"),
-              )
+
+              ButtonBar(
+                alignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  new RaisedButton(
+                    onPressed: () async {
+                      postRequest(10);
+                    },
+                    child: const Text("Fertig"),
+                  ),
+                  new RaisedButton(
+                    onPressed: () async {
+                      postRequest(20);
+                    },
+                    child: const Text("Aus"),
+                  ),
+                  new RaisedButton(
+                    onPressed: () async {
+                      postRequest(30);
+                    },
+                    child: const Text("Leer"),
+                  ),
+                  new RaisedButton(
+                    onPressed: () async {
+                      postRequest(40);
+                    },
+                    child: const Text("Defekt!"),
+                  ),
+                ],
+              ),
             ],
           ),
         ));
