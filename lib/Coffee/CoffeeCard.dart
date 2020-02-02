@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/KaffeeView.dart';
-import 'package:FIW_Studi_App/Coffee/Button.dart';
+import 'package:FIW_Studi_App/Networking/Button.dart';
+import 'package:FIW_Studi_App/globals.dart';
 
 class CoffeeCard extends StatefulWidget {
   @override
@@ -16,7 +17,6 @@ class CoffeeCardState extends State<CoffeeCard> {
     // macht die "Card" anklickbar
     return InkWell(
       onTap: () {
-        // Navigator verweist auf FolgeView
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => KaffeeView()),
