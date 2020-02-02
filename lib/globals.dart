@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/Coffee/Post.dart';
+import 'package:FIW_Studi_App/Networking/Post.dart';
+
+//variables for login
+String kNumber;
+String password;
 
 bool isLoggedIn = true;
 
