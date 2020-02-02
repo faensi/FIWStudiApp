@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
-
 //variables for login
 String kNumber;
 String password;
 
-bool isLoggedIn = true;
+bool isLoggedIn = false;
 
 //variables for Note Class
 int semester = 0;
