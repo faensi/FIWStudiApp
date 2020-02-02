@@ -1,4 +1,4 @@
-import 'package:FIW_Studi_App/VorlesungsplanerView.dart';
+import 'package:FIW_Studi_App/Vorlesungsplaner/VorlesungsplanerView.dart';
 import 'package:flutter/material.dart';
 
 class VorlesungsplanerCard extends StatelessWidget {

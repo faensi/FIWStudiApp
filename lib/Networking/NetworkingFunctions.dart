@@ -16,7 +16,7 @@ Future<http.Response> postNews(String title, String text) async {
     "text": text,
     "time": globals.getIso8601Time(),
     "title": title,
-    "userName": username
+    "userName": username,
   };
   var body = json.encode(data);
   var response = await http.post(url,

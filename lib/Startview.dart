@@ -27,7 +27,6 @@ class Startview extends StatelessWidget {
               CoffeeCard(),
               FSnewsCard(),
               VorlesungsplanerCard(),
-              //VorlesungsplanerCard(),
             ],
           ),
         ));

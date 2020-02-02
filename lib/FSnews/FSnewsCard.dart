@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/FSnewsView.dart';
+import 'package:FIW_Studi_App/FSnews/FSnewsView.dart';
 
 class FSnewsCard extends StatelessWidget {
   @override
