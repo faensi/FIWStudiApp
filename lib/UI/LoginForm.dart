@@ -1,3 +1,4 @@
+import 'package:FIW_Studi_App/Startview.dart';
 import 'package:FIW_Studi_App/UI/NavDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
@@ -71,6 +72,7 @@ class LoginForm extends StatelessWidget {
                     onPressed: () {
                       globals.kNumber = this.username;
                       globals.password = this.password;
+                      Navigator.pop(login);
                     },
                   )
                 ],
