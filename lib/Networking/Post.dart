@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:FIW_Studi_App/globals.dart' as globals;
 
 Future<http.Response> postRequest(int postState) async {
   var url = 'https://apistaging.fiw.fhws.de/studi-app/api/coffee-machine/';
-  var ISO8601time =
-      DateTime.now().toIso8601String().substring(0, 19) + "+00:00";
+
   Map data = {
     "state": postState,
-    "statusTime": ISO8601time,
+    "statusTime": globals.getIso8601Time(),
     "userName": "TestUserX"
   };
   //noch hardcoded bitte aendern
