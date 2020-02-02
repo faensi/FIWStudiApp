@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
-import 'package:FIW_Studi_App/Networking/newsNet.dart' as neNet;
+import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart' as neNet;
 import 'package:FIW_Studi_App/FSnewsView.dart';
 
 class FSnewsCreateView extends StatelessWidget {

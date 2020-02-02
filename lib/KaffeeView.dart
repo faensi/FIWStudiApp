@@ -6,7 +6,7 @@ import 'package:FIW_Studi_App/Coffee/CoffeeHeadline.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeText.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
-import 'package:FIW_Studi_App/Networking/Post.dart';
+import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
 
 class KaffeeView extends StatefulWidget {
@@ -76,25 +76,25 @@ class KaffeeViewState extends State<KaffeeView> {
                 children: <Widget>[
                   new RaisedButton(
                     onPressed: () async {
-                      postRequest(10);
+                      postState(10);
                     },
                     child: const Text("Fertig"),
                   ),
                   new RaisedButton(
                     onPressed: () async {
-                      postRequest(20);
+                      postState(20);
                     },
                     child: const Text("Aus"),
                   ),
                   new RaisedButton(
                     onPressed: () async {
-                      postRequest(30);
+                      postState(30);
                     },
                     child: const Text("Leer"),
                   ),
                   new RaisedButton(
                     onPressed: () async {
-                      postRequest(40);
+                      postState(40);
                     },
                     child: const Text("Defekt!"),
                   ),

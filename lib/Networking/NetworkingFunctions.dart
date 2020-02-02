@@ -27,3 +27,18 @@ Future<http.Response> postNews(String title, String text) async {
       body: body);
   return response;
 }
+
+Future<http.Response> postState(int pState) async {
+  var url = 'https://apistaging.fiw.fhws.de/studi-app/api/coffee-machine/';
+
+  Map data = {
+    "state": pState,
+    "statusTime": globals.getIso8601Time(),
+    "userName": globals.kNumber,
+  };
+  var body = json.encode(data);
+
+  var response = await http.post(url,
+      headers: {"Content-Type": "application/json"}, body: body);
+  return response;
+}
