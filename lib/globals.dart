@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/Networking/Post.dart';
 
 //variables for login
 String kNumber;
