@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
+import 'package:FIW_Studi_App/Networking/newsNet.dart' as neNet;
+import 'package:FIW_Studi_App/FSnewsView.dart';
 
 class FSnewsCreateView extends StatelessWidget {
+  static final TextEditingController _title = new TextEditingController();
+  static final TextEditingController _text = new TextEditingController();
+
+  String get title => _title.text;
+  String get text => _text.text;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,6 +47,7 @@ class FSnewsCreateView extends StatelessWidget {
               ),
               SizedBox(height: 64.0),
               TextField(
+                controller: _title,
                 decoration: InputDecoration(
                   hintText: "News-Title",
                 ),
@@ -49,6 +58,7 @@ class FSnewsCreateView extends StatelessWidget {
               ),
               Divider(height: 12),
               TextField(
+                controller: _text,
                 decoration: InputDecoration(hintText: "News-Text"),
                 //beschreibt ein Feld in das Text in nicht endlicher Länge eingegeben werden kann
                 keyboardType: TextInputType.multiline,
@@ -57,7 +67,13 @@ class FSnewsCreateView extends StatelessWidget {
               Divider(height: 16),
               RaisedButton(
                 child: Text("Create"),
-                onPressed: () {},
+                onPressed: () {
+                  neNet.postNews(title, text);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FSnewsView()),
+                  );
+                },
               )
             ],
           ),
