@@ -1,8 +1,15 @@
 import 'package:FIW_Studi_App/UI/NavDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
+import 'package:FIW_Studi_App/globals.dart' as globals;
 
 class LoginForm extends StatelessWidget {
+  static final TextEditingController _user = new TextEditingController();
+  static final TextEditingController _pass = new TextEditingController();
+
+  String get username => _user.text;
+  String get password => _pass.text;
+
   @override
   Widget build(BuildContext login) {
     return MaterialApp(
@@ -36,13 +43,15 @@ class LoginForm extends StatelessWidget {
               ),
               SizedBox(height: 120),
               TextField(
+                controller: _user,
                 decoration: InputDecoration(
                   filled: true,
-                  labelText: 'knummer',
+                  labelText: 'k-nummer',
                 ),
               ),
               SizedBox(height: 12.0),
               TextField(
+                controller: _pass,
                 decoration: InputDecoration(
                   filled: true,
                   labelText: 'Passwort',
@@ -59,7 +68,10 @@ class LoginForm extends StatelessWidget {
                   ),
                   RaisedButton(
                     child: Text('Next'),
-                    onPressed: () {},
+                    onPressed: () {
+                      globals.kNumber = this.username;
+                      globals.password = this.password;
+                    },
                   )
                 ],
               ),
