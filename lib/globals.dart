@@ -1,7 +1,6 @@
 //variables for login
 String kNumber;
 String password;
-
 bool isLoggedIn = false;
 
 //variables for Note Class
@@ -24,3 +23,6 @@ String displayTime() {
 String getIso8601Time() {
   return DateTime.now().toIso8601String().substring(0, 19) + "+00:00";
 }
+
+//news
+List<dynamic> newsData;
