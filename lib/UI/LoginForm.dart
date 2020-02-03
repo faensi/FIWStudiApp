@@ -3,6 +3,7 @@ import 'package:FIW_Studi_App/UI/NavDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
+import 'package:FIW_Studi_App/Networking/Authorization.dart' as auth;
 
 class LoginForm extends StatelessWidget {
   static final TextEditingController _user = new TextEditingController();
@@ -72,6 +73,7 @@ class LoginForm extends StatelessWidget {
                     onPressed: () {
                       globals.kNumber = this.username;
                       globals.password = this.password;
+                      auth.checkAuth();
                       Navigator.pop(login);
                     },
                   )
