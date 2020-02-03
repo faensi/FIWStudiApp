@@ -5,19 +5,19 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:FIW_Studi_App/globals.dart';
+import 'package:FIW_Studi_App/globals.dart' as globals;
 import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart';
 
 class CoffeeButton extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
+    //new Timer.periodic(Duration(seconds: 3), (Timer t) => CoffeeButtonState());
     return CoffeeButtonState();
   }
 }
 
 class CoffeeButtonState extends State<CoffeeButton> {
   //final String _assetPath;
-
   //  CoffeeBannerState(this._assetPath);
   @override
   Widget build(BuildContext context) {
@@ -58,29 +58,30 @@ class CoffeeButtonState extends State<CoffeeButton> {
   }
 
   void coffeeLogic() {
-    if (cState == "10") {
+    if (globals.cState == "10") {
       cofImageAdr = "Images/Coffeeimage.png";
-      cofStatus = "Kaffee gemacht" + "\n" + displayTime();
-    } else if (cState == "20") {
+      cofStatus = "Kaffee gemacht" + "\n" + globals.displayTime();
+    } else if (globals.cState == "20") {
       cofImageAdr = "Images/KaffeGrey.png";
-      cofStatus = "Kaffeemaschine aus" + "\n" + displayTime();
-    } else if (cState == "30") {
+      cofStatus = "Kaffeemaschine aus" + "\n" + globals.displayTime();
+    } else if (globals.cState == "30") {
       cofImageAdr = "Images/Coffee_background.png";
-      cofStatus = "Kaffeemaschine leer" + "\n" + displayTime();
-    } else if (cState == "40") {
+      cofStatus = "Kaffeemaschine leer" + "\n" + globals.displayTime();
+    } else if (globals.cState == "40") {
       cofImageAdr = "Images/Coffee_background.png";
-      cofStatus = "Kaffeemaschine defekt" + "\n" + displayTime();
+      cofStatus = "Kaffeemaschine defekt" + "\n" + globals.displayTime();
     } else {
       print("Error");
     }
-    ;
+    new Timer.periodic(Duration(seconds: 3), (Timer t) => setState);
+    //TODO: check out how to refresh
   }
 
   @override
   void initState() {
     super.initState();
     getCData();
-    coffeeLogic();
-    new Timer.periodic(Duration(seconds: 3), (Timer t) => setState(() {}));
+    //TODO: check out how to refresh
+    new Timer.periodic(Duration(seconds: 3), (Timer t) => coffeeLogic());
   }
 }
