@@ -18,6 +18,7 @@ class VorlesungsplanerCard extends StatelessWidget {
           children: <Widget>[
             AspectRatio(
               aspectRatio: 18.0 / 11.0,
+              child: Image.asset('Images/Kalender.png'),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
