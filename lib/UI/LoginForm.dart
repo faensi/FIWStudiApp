@@ -45,6 +45,7 @@ class LoginForm extends StatelessWidget {
               ),
               SizedBox(height: 120),
               TextField(
+                autocorrect: false,
                 controller: _user,
                 decoration: InputDecoration(
                   filled: true,
@@ -53,6 +54,7 @@ class LoginForm extends StatelessWidget {
               ),
               SizedBox(height: 12.0),
               TextField(
+                autocorrect: false,
                 controller: _pass,
                 decoration: InputDecoration(
                   filled: true,
