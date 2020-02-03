@@ -59,16 +59,16 @@ class CoffeeButtonState extends State<CoffeeButton> {
 
   void coffeeLogic() {
     if (globals.cState == "10") {
-      cofImageAdr = "Images/Coffeeimage.png";
+      cofImageAdr = "Images/Coffee_full.png";
       cofStatus = "Kaffee gemacht" + "\n" + globals.displayTime();
     } else if (globals.cState == "20") {
-      cofImageAdr = "Images/KaffeGrey.png";
+      cofImageAdr = "Images/Coffee_shutoff.png";
       cofStatus = "Kaffeemaschine aus" + "\n" + globals.displayTime();
     } else if (globals.cState == "30") {
-      cofImageAdr = "Images/Coffee_background.png";
+      cofImageAdr = "Images/Coffee_empty.png";
       cofStatus = "Kaffeemaschine leer" + "\n" + globals.displayTime();
     } else if (globals.cState == "40") {
-      cofImageAdr = "Images/Coffee_background.png";
+      cofImageAdr = "Images/Coffee_broken.png";
       cofStatus = "Kaffeemaschine defekt" + "\n" + globals.displayTime();
     } else {
       print("Error");

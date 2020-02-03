@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeView.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeButton.dart';
-import 'package:FIW_Studi_App/globals.dart';
+import 'package:FIW_Studi_App/globals.dart' as globals;
 
 class CoffeeCard extends StatefulWidget {
   @override
@@ -12,6 +12,7 @@ class CoffeeCard extends StatefulWidget {
 
 class CoffeeCardState extends State<CoffeeCard> {
   String image = cofImageAdr;
+
   @override
   Widget build(BuildContext context) {
     // macht die "Card" anklickbar
