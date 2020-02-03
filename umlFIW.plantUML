@@ -1,0 +1,159 @@
+@startuml
+set namespaceSeparator ::
+
+class "FIW_Studi_App::Coffee::Button.dart::CoffeeButton" {
+  +State createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "FIW_Studi_App::Coffee::Button.dart::CoffeeButton"
+
+class "FIW_Studi_App::Coffee::Button.dart::CoffeeButtonState" {
+  +String image1
+  +String status
+  +String url
+  +Future getCData()
+  +Widget build()
+  +void initState()
+}
+
+"flutter::src::widgets::framework.dart::State<T>" <|-- "FIW_Studi_App::Coffee::Button.dart::CoffeeButtonState"
+
+class "FIW_Studi_App::Coffee::CoffeeCard.dart::CoffeeCard" {
+  +State createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "FIW_Studi_App::Coffee::CoffeeCard.dart::CoffeeCard"
+
+class "FIW_Studi_App::Coffee::CoffeeCard.dart::CoffeeCardState" {
+  +String image
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State<T>" <|-- "FIW_Studi_App::Coffee::CoffeeCard.dart::CoffeeCardState"
+
+class "FIW_Studi_App::Coffee::CoffeeHeadline.dart::CoffeeHeadline" {
+  {static} -double _hPad
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::Coffee::CoffeeHeadline.dart::CoffeeHeadline"
+
+class "FIW_Studi_App::Coffee::CoffeeText.dart::CoffeeText" {
+  {static} -double _hPad
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::Coffee::CoffeeText.dart::CoffeeText"
+
+class "FIW_Studi_App::FSnews::FSnewsCard.dart::FSnewsCard" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::FSnews::FSnewsCard.dart::FSnewsCard"
+
+class "FIW_Studi_App::FSnewsCreateView.dart::FSnewsCreateView" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::FSnewsCreateView.dart::FSnewsCreateView"
+
+class "FIW_Studi_App::FSnewsDetailView.dart::FSnewsViewState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::FSnewsDetailView.dart::FSnewsViewState"
+
+class "FIW_Studi_App::FSnewsView.dart::FSnewsView" {
+  +State createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "FIW_Studi_App::FSnewsView.dart::FSnewsView"
+
+class "FIW_Studi_App::FSnewsView.dart::FSnewsViewState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State<T>" <|-- "FIW_Studi_App::FSnewsView.dart::FSnewsViewState"
+
+class "FIW_Studi_App::KaffeeView.dart::KaffeeView" {
+  +State createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "FIW_Studi_App::KaffeeView.dart::KaffeeView"
+
+class "FIW_Studi_App::KaffeeView.dart::KaffeeViewState" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State<T>" <|-- "FIW_Studi_App::KaffeeView.dart::KaffeeViewState"
+
+class "FIW_Studi_App::Note.dart::Note" {
+  +int sem
+  +String degreeProgram
+  +int offset
+  +int insertSize
+  +String q
+  +void getInfo()
+  {static} +Future restApi()
+}
+
+class "FIW_Studi_App::Startview.dart::Startview" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::Startview.dart::Startview"
+
+class "FIW_Studi_App::UI::App.dart::App" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::UI::App.dart::App"
+
+class "FIW_Studi_App::UI::LoginForm.dart::LoginForm" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::UI::LoginForm.dart::LoginForm"
+
+class "FIW_Studi_App::UI::NavDrawer.dart::NavDrawer" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::UI::NavDrawer.dart::NavDrawer"
+
+class "FIW_Studi_App::Vorlesungsplaner::VorlesungsplanerCard.dart::VorlesungsplanerCard" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::Vorlesungsplaner::VorlesungsplanerCard.dart::VorlesungsplanerCard"
+
+class "FIW_Studi_App::Vorlesungsplaner::VorlesungsplanerDetail.dart::VorlesungsplanerDetail" {
+  +State createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "FIW_Studi_App::Vorlesungsplaner::VorlesungsplanerDetail.dart::VorlesungsplanerDetail"
+
+class "FIW_Studi_App::Vorlesungsplaner::VorlesungsplanerDetail.dart::VorlesungsplanerDetailState" {
+  +Note n
+  +Widget build()
+}
+
+"FIW_Studi_App::Vorlesungsplaner::VorlesungsplanerDetail.dart::VorlesungsplanerDetailState" o-- "FIW_Studi_App::Note.dart::Note"
+"flutter::src::widgets::framework.dart::State<T>" <|-- "FIW_Studi_App::Vorlesungsplaner::VorlesungsplanerDetail.dart::VorlesungsplanerDetailState"
+
+class "FIW_Studi_App::Vorlesungsplaner::VorlesungsplanerSemester.dart::VorlesungsplanerSemester" {
+  +List<String> semester
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::Vorlesungsplaner::VorlesungsplanerSemester.dart::VorlesungsplanerSemester"
+
+class "FIW_Studi_App::VorlesungsplanerView.dart::VorlesungsplanerView" {
+  +List<String> studiengaenge
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "FIW_Studi_App::VorlesungsplanerView.dart::VorlesungsplanerView"
+
+
+@enduml

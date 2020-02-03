@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/Colors.dart';
+import '../UI/Colors.dart';
 
-class FSnewsChangeView extends StatelessWidget {
+class FSnewsViewState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'FSnewsChangeView',
+      title: 'FSnewsView',
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('FSnewsChangeView'),
+          title: Text('FSnewsView'),
           backgroundColor: studiAppGreen,
           leading: IconButton(
             icon: Icon(
@@ -20,6 +20,13 @@ class FSnewsChangeView extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            //FSnewsNews("Title", "News"),
+          ],
         ),
       ),
     );
