@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:ffi';
-
 import 'package:FIW_Studi_App/Networking/Button.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeHeadline.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeText.dart';
@@ -67,6 +66,12 @@ class KaffeeViewState extends State<KaffeeView> {
                     setState(() {});
                   },
                   child: const Text("false"),
+                ),
+                new RaisedButton(
+                  onPressed: () {
+                    setState(() {});
+                  },
+                  child: const Text("setState"),
                 ),
               ],
             ),

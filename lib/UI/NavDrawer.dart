@@ -1,5 +1,5 @@
 import 'package:FIW_Studi_App/FSnews/FSnewsView.dart';
-import 'package:FIW_Studi_App/Coffee/KaffeeView.dart';
+import 'package:FIW_Studi_App/Coffee/CoffeeView.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 import 'package:FIW_Studi_App/Vorlesungsplaner/VorlesungsplanerView.dart';
 import 'package:flutter/material.dart';
