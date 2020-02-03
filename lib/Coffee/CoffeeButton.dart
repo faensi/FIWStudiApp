@@ -73,8 +73,6 @@ class CoffeeButtonState extends State<CoffeeButton> {
     } else {
       print("Error");
     }
-    new Timer.periodic(Duration(seconds: 3), (Timer t) => setState);
-    //TODO: check out how to refresh
   }
 
   @override
@@ -82,6 +80,12 @@ class CoffeeButtonState extends State<CoffeeButton> {
     super.initState();
     getCData();
     //TODO: check out how to refresh
-    new Timer.periodic(Duration(seconds: 3), (Timer t) => coffeeLogic());
+    new Timer.periodic(
+      Duration(seconds: 3),
+      (Timer t) => setState(() {
+        getCData();
+        coffeeLogic();
+      }),
+    );
   }
 }
