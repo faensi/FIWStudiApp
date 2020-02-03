@@ -34,7 +34,7 @@ class NavDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => KaffeeView()),
+                MaterialPageRoute(builder: (context) => CoffeeView()),
               );
             },
           ),

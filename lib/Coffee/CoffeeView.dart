@@ -1,21 +1,23 @@
-import 'dart:convert';
-import 'dart:ffi';
-import 'package:FIW_Studi_App/Networking/Button.dart';
+import 'package:FIW_Studi_App/Coffee/CoffeeButton.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeHeadline.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeText.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
+import 'dart:async';
 
-class KaffeeView extends StatefulWidget {
+class CoffeeView extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return KaffeeViewState();
+    return CoffeeViewState();
   }
 }
 
-class KaffeeViewState extends State<KaffeeView> {
+String cofImageAdr = "Images/Coffee_background.png";
+String cofStatus = "Der Status wird geladen";
+
+class CoffeeViewState extends State<CoffeeView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
