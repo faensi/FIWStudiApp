@@ -21,7 +21,7 @@ class VorlesungsplanerView extends StatelessWidget {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    InkWell(
+                    GestureDetector(
                       onTap: () {
                         globals.degreeProgramm = studiengaenge[index];
                         Navigator.push(

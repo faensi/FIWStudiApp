@@ -20,6 +20,7 @@ class FSnewsViewState extends State<FSnewsView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: studiAppGreen,
         title: Text("FS News View"),
         //backgroundColor: Colors.deepPurpleAccent,
       ),
@@ -38,10 +39,9 @@ class FSnewsViewState extends State<FSnewsView> {
                 children: <Widget>[
                   Card(
                     child: Container(
-                      padding: EdgeInsets.all(15.0),
+                      padding: EdgeInsets.all(20.0),
                       child: Wrap(
                         children: <Widget>[
-                          Text(""),
                           Row(
                             children: <Widget>[
                               Text(
@@ -58,14 +58,15 @@ class FSnewsViewState extends State<FSnewsView> {
                           ),
                           Row(
                             children: <Widget>[
-                              Text(""),
-                              Text(
-                                  globals.newsData[globals.newsData.length -
-                                          1 -
-                                          index]["text"]
-                                      .toString(),
-                                  style: TextStyle(
-                                      fontSize: 18.0, color: Colors.black87)),
+                              Expanded(
+                                child: Text(
+                                    globals.newsData[globals.newsData.length -
+                                            1 -
+                                            index]["text"]
+                                        .toString(),
+                                    style: TextStyle(
+                                        fontSize: 18.0, color: Colors.black87)),
+                              ),
                             ],
                           ),
                           Row(

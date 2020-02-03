@@ -16,7 +16,7 @@ class CoffeeCardState extends State<CoffeeCard> {
   @override
   Widget build(BuildContext context) {
     // macht die "Card" anklickbar
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         Navigator.push(
           context,

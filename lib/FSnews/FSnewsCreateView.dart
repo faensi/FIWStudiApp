@@ -62,6 +62,7 @@ class FSnewsCreateView extends StatelessWidget {
                 decoration: InputDecoration(hintText: "News-Text"),
                 //beschreibt ein Feld in das Text in nicht endlicher Länge eingegeben werden kann
                 keyboardType: TextInputType.multiline,
+                maxLength: 256,
                 maxLines: null,
               ),
               Divider(height: 16),
