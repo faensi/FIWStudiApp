@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:ffi';
-import 'package:FIW_Studi_App/Networking/Button.dart';
+import 'package:FIW_Studi_App/Coffee/CoffeeButton.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeHeadline.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeText.dart';
 import 'package:flutter/material.dart';

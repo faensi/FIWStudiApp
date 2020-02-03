@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeView.dart';
-import 'package:FIW_Studi_App/Networking/Button.dart';
+import 'package:FIW_Studi_App/Coffee/CoffeeButton.dart';
 import 'package:FIW_Studi_App/globals.dart';
 
 class CoffeeCard extends StatefulWidget {
@@ -11,7 +11,7 @@ class CoffeeCard extends StatefulWidget {
 }
 
 class CoffeeCardState extends State<CoffeeCard> {
-  String image = CoffeeButtonState().image1;
+  String image = cofImageAdr;
   @override
   Widget build(BuildContext context) {
     // macht die "Card" anklickbar
@@ -19,7 +19,7 @@ class CoffeeCardState extends State<CoffeeCard> {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => KaffeeView()),
+          MaterialPageRoute(builder: (context) => CoffeeView()),
         );
       },
       child: Card(
