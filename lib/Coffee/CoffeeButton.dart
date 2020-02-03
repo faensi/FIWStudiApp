@@ -6,6 +6,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:FIW_Studi_App/globals.dart';
+import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart';
 
 class CoffeeButton extends StatefulWidget {
   @override
@@ -18,22 +19,6 @@ class CoffeeButtonState extends State<CoffeeButton> {
   //final String _assetPath;
 
   //  CoffeeBannerState(this._assetPath);
-  String image1 = "Images/Coffee_background.png";
-  String status = "Tippe auf das Bild, um den Status zu erfahren";
-  final String url =
-      "https://apistaging.fiw.fhws.de/studi-app/api/coffee-machine/getCurrentState";
-
-  Future<String> getCData() async {
-    http.Response response = await http
-        .get(Uri.encodeFull(url), headers: {"Accept": "application/json"});
-    cData = jsonDecode(response.body);
-    cState = cData["state"].toString();
-    cLastTime = DateTime.parse(cData["statusTime"]);
-    cUserName = cData[
-        "userName"]; //momentan nicht in Verwendung; hier Aufgrund der Datenabnk
-    return "Success!";
-  }
-
   @override
   Widget build(BuildContext context) {
     // erzeugt Container mit Größe 200x200 Pixel für den KaffeeButton
@@ -50,23 +35,9 @@ class CoffeeButtonState extends State<CoffeeButton> {
             child: GestureDetector(
               onTap: () => setState(() {
                 getCData();
-                if (cState == "10") {
-                  image1 = "Images/Coffeeimage.png";
-                  status = "Kaffee gemacht" + "\n" + displayTime();
-                } else if (cState == "20") {
-                  image1 = "Images/KaffeGrey.png";
-                  status = "Kaffeemaschine aus" + "\n" + displayTime();
-                } else if (cState == "30") {
-                  image1 = "Images/Coffee_background.png";
-                  status = "Kaffeemaschine leer" + "\n" + displayTime();
-                } else if (cState == "40") {
-                  image1 = "Images/Coffee_background.png";
-                  status = "Kaffeemaschine defekt" + "\n" + displayTime();
-                } else {
-                  print("Error");
-                }
+                coffeeLogic();
               }),
-              child: Image.asset(image1),
+              child: Image.asset(cofImageAdr),
             ),
           ),
         ),
@@ -76,7 +47,7 @@ class CoffeeButtonState extends State<CoffeeButton> {
         Container(
           child: Center(
             child: Text(
-              status,
+              cofStatus,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
@@ -86,9 +57,30 @@ class CoffeeButtonState extends State<CoffeeButton> {
     );
   }
 
+  void coffeeLogic() {
+    if (cState == "10") {
+      cofImageAdr = "Images/Coffeeimage.png";
+      cofStatus = "Kaffee gemacht" + "\n" + displayTime();
+    } else if (cState == "20") {
+      cofImageAdr = "Images/KaffeGrey.png";
+      cofStatus = "Kaffeemaschine aus" + "\n" + displayTime();
+    } else if (cState == "30") {
+      cofImageAdr = "Images/Coffee_background.png";
+      cofStatus = "Kaffeemaschine leer" + "\n" + displayTime();
+    } else if (cState == "40") {
+      cofImageAdr = "Images/Coffee_background.png";
+      cofStatus = "Kaffeemaschine defekt" + "\n" + displayTime();
+    } else {
+      print("Error");
+    }
+    ;
+  }
+
   @override
   void initState() {
     super.initState();
-    this.getCData();
+    getCData();
+    coffeeLogic();
+    new Timer.periodic(Duration(seconds: 3), (Timer t) => setState(() {}));
   }
 }
