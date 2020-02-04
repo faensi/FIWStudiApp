@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/Colors.dart';
 import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
-import 'package:http/http.dart' as http;
 import 'dart:async';
-import 'dart:convert';
-import 'dart:io';
 
 class FSnewsView extends StatefulWidget {
   @override
@@ -16,13 +13,13 @@ class FSnewsView extends StatefulWidget {
 }
 
 class FSnewsViewState extends State<FSnewsView> {
+  Timer _timer;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: studiAppGreen,
         title: Text("FS News View"),
-        //backgroundColor: Colors.deepPurpleAccent,
       ),
       body: ListView.builder(
         itemCount: globals.newsData == null
@@ -49,10 +46,8 @@ class FSnewsViewState extends State<FSnewsView> {
                                         1 -
                                         index]["title"]
                                     .toString(),
-                                style: TextStyle(
-                                    decoration: TextDecoration.underline,
-                                    fontSize: 18.0,
-                                    color: Colors.black87),
+                                style:
+                                    Theme.of(context).primaryTextTheme.display1,
                               ),
                             ],
                           ),
@@ -60,12 +55,11 @@ class FSnewsViewState extends State<FSnewsView> {
                             children: <Widget>[
                               Expanded(
                                 child: Text(
-                                    globals.newsData[globals.newsData.length -
-                                            1 -
-                                            index]["text"]
-                                        .toString(),
-                                    style: TextStyle(
-                                        fontSize: 18.0, color: Colors.black87)),
+                                  globals.newsData[globals.newsData.length -
+                                          1 -
+                                          index]["text"]
+                                      .toString(),
+                                ),
                               ),
                             ],
                           ),
@@ -73,12 +67,11 @@ class FSnewsViewState extends State<FSnewsView> {
                             children: <Widget>[
                               Text("Author: "),
                               Text(
-                                  globals.newsData[globals.newsData.length -
-                                          1 -
-                                          index]["userName"]
-                                      .toString(),
-                                  style: TextStyle(
-                                      fontSize: 18.0, color: Colors.black87)),
+                                globals.newsData[globals.newsData.length -
+                                        1 -
+                                        index]["userName"]
+                                    .toString(),
+                              ),
                             ],
                           ),
                         ],
@@ -92,7 +85,9 @@ class FSnewsViewState extends State<FSnewsView> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+        ),
         onPressed: () {
           Navigator.push(
             context,
@@ -106,7 +101,17 @@ class FSnewsViewState extends State<FSnewsView> {
   @override
   void initState() {
     super.initState();
-    getNewsData();
-    new Timer.periodic(Duration(seconds: 3), (Timer t) => setState(() {}));
+    _iniData();
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  Future<void> _iniData() async {
+    await getNewsData();
+    _timer = Timer.periodic(Duration(seconds: 3), (Timer t) => setState(() {}));
   }
 }
