@@ -4,6 +4,9 @@ import 'package:FIW_Studi_App/Vorlesungsplaner/vorlesungsplaner_view.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/login_form.dart';
 
+import '../globals.dart';
+import 'Style.dart';
+
 class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,21 +18,21 @@ class NavDrawer extends StatelessWidget {
           //fslogin --> true
           // beschreibt den Drawer Kopf
           UserAccountsDrawerHeader(
-            accountName: new Text("Fachschaft"),
+            accountName: Text("Fachschaft"),
             accountEmail: null,
             //beschreibt das Bild im Drawer
-            currentAccountPicture: new CircleAvatar(
-              //TODO: backgroundColor: studiAppPurple,
-              child: new Text("FS"),
+            currentAccountPicture: CircleAvatar(
+              backgroundColor: studiAppPurple,
+              child: isLoggedIn ? Text("FS") : null,
             ),
             //beschreibt die Boxfarbe
             decoration: BoxDecoration(
-                //TODO:  color: studiAppGreen,
-                ),
+              color: studiAppGreen,
+            ),
           ),
           //beschreibt ein Element der ListView
           ListTile(
-            title: new Text("1. Kaffeemaschine"),
+            title: Text("1. Kaffeemaschine"),
             onTap: () {
               Navigator.push(
                 context,
@@ -38,7 +41,7 @@ class NavDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: new Text("2. FS-News"),
+            title: Text("2. FS-News"),
             onTap: () {
               Navigator.push(
                 context,
@@ -47,7 +50,7 @@ class NavDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: new Text("3. Vorlesungsssplaner"),
+            title: Text("3. Vorlesungsssplaner"),
             onTap: () {
               Navigator.push(
                 context,
@@ -56,8 +59,9 @@ class NavDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: new Text("Login"),
+            title: Text("Login"),
             onTap: () {
+              Navigator.pop(context);
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => LoginForm()),
@@ -67,8 +71,8 @@ class NavDrawer extends StatelessWidget {
           // fügt eine Leerzeile ein
           Divider(),
           ListTile(
-            title: new Text("Close"),
-            trailing: new Icon(Icons.close),
+            title: Text("Close"),
+            trailing: Icon(Icons.close),
             onTap: () {
               Navigator.pop(context);
             },
