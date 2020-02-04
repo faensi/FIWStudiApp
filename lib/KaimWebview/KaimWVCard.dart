@@ -14,7 +14,6 @@ class KaimWVCard extends StatefulWidget {
 class KaimWVState extends State<KaimWVCard> {
   @override
   Widget build(BuildContext context) {
-    // macht die "Card" anklickbar
     return InkWell(
       onTap: () {
         Navigator.push(
@@ -25,10 +24,8 @@ class KaimWVState extends State<KaimWVCard> {
       child: Card(
         clipBehavior: Clip.antiAlias,
         child: Column(
-          // Anordnung der Elemente, entweder Horizontal oder Vertikal
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            // Rellation von Breite und höhe der image
             AspectRatio(
               aspectRatio: 18.0 / 11.0,
               child: Image.asset('Images/unicorn.png'),
