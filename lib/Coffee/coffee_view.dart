@@ -8,11 +8,11 @@ import 'package:FIW_Studi_App/globals.dart' as globals;
 class CoffeeView extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return CoffeeViewState();
+    return _CoffeeViewState();
   }
 }
 
-class CoffeeViewState extends State<CoffeeView> {
+class _CoffeeViewState extends State<CoffeeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

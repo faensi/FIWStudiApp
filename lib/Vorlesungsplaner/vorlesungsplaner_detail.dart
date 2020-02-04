@@ -5,11 +5,11 @@ import 'package:FIW_Studi_App/globals.dart' as globals;
 class VorlesungsplanerDetail extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return VorlesungsplanerDetailState();
+    return _VorlesungsplanerDetailState();
   }
 }
 
-class VorlesungsplanerDetailState extends State<VorlesungsplanerDetail> {
+class _VorlesungsplanerDetailState extends State<VorlesungsplanerDetail> {
   List<Course> _courseList;
 
   @override

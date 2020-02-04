@@ -10,11 +10,11 @@ import '../helper_functions.dart';
 class CoffeeCard extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return CoffeeCardState();
+    return _CoffeeCardState();
   }
 }
 
-class CoffeeCardState extends State<CoffeeCard> {
+class _CoffeeCardState extends State<CoffeeCard> {
   Timer _timer;
 
   @override
