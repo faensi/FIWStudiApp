@@ -11,7 +11,7 @@ class VorlesungsplanerCard extends StatelessWidget {
           MaterialPageRoute(builder: (context) => VorlesungsplanerView()),
         );
       },
-      child: new Card(
+      child: Card(
         clipBehavior: Clip.antiAlias,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
