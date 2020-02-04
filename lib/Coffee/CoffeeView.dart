@@ -26,7 +26,7 @@ class CoffeeViewState extends State<CoffeeView> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: studiAppGreen,
-          title: Text("COFFEE"),
+          title: Text("Kaffeemaschine"),
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
@@ -42,15 +42,15 @@ class CoffeeViewState extends State<CoffeeView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CoffeeHeadline(),
-            Divider(
+            SizedBox(
               height: 40,
             ),
             CoffeeButton(),
             CoffeeText(),
-            Divider(
+            SizedBox(
               height: 20,
             ),
-            ButtonBar(
+            /*ButtonBar(
               alignment: MainAxisAlignment.center,
               children: <Widget>[
                 new RaisedButton(
@@ -76,7 +76,7 @@ class CoffeeViewState extends State<CoffeeView> {
                   child: const Text("setState"),
                 ),
               ],
-            ),
+            ),*/
             if (globals.isLoggedIn)
               ButtonBar(
                 alignment: MainAxisAlignment.center,

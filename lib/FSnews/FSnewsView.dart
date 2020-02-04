@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'package:FIW_Studi_App/UI/NavDrawer.dart';
 
 class FSnewsView extends StatefulWidget {
   @override
@@ -21,7 +22,7 @@ class FSnewsViewState extends State<FSnewsView> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: studiAppGreen,
-        title: Text("FS News View"),
+        title: Text("FSNews"),
         //backgroundColor: Colors.deepPurpleAccent,
       ),
       body: ListView.builder(

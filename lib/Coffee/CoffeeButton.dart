@@ -81,7 +81,7 @@ class CoffeeButtonState extends State<CoffeeButton> {
     getCData();
     //TODO: check out how to refresh
     new Timer.periodic(
-      Duration(seconds: 3),
+      Duration(seconds: 1),
       (Timer t) => setState(() {
         getCData();
         coffeeLogic();

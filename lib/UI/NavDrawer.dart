@@ -4,6 +4,7 @@ import 'package:FIW_Studi_App/UI/Colors.dart';
 import 'package:FIW_Studi_App/Vorlesungsplaner/VorlesungsplanerView.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/LoginForm.dart';
+import 'package:FIW_Studi_App/globals.dart' as globals;
 
 class NavDrawer extends StatelessWidget {
   @override
