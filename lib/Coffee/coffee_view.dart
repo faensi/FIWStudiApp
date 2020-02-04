@@ -1,11 +1,9 @@
-import 'package:FIW_Studi_App/Coffee/CoffeeButton.dart';
-import 'package:FIW_Studi_App/Coffee/CoffeeHeadline.dart';
-import 'package:FIW_Studi_App/Coffee/CoffeeText.dart';
+import 'package:FIW_Studi_App/Coffee/coffee_button.dart';
+import 'package:FIW_Studi_App/Coffee/coffee_headline.dart';
+import 'package:FIW_Studi_App/Coffee/coffee_text.dart';
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/UI/Colors.dart';
-import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart';
+import 'package:FIW_Studi_App/Networking/networking_functions.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
-import 'dart:async';
 
 class CoffeeView extends StatefulWidget {
   @override

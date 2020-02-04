@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart' as net;
+import 'package:FIW_Studi_App/Coffee/coffee_view.dart';
 
-class KaimWVCard extends StatefulWidget {
+class CoffeeCard extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return KaimWVState();
+    return CoffeeCardState();
   }
 }
 
-class KaimWVState extends State<KaimWVCard> {
+class CoffeeCardState extends State<CoffeeCard> {
+  String image = cofImageAdr;
+
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    // macht die "Card" anklickbar
+    return GestureDetector(
       onTap: () {
-        net.launchURL(context);
-/*        Navigator.push(
+        Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => KaimWView()),
-
+          MaterialPageRoute(builder: (context) => CoffeeView()),
         );
- */
       },
       child: Card(
         clipBehavior: Clip.antiAlias,
         child: Column(
+          // Anordnung der Elemente, entweder Horizontal oder Vertikal
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            // Rellation von Breite und höhe der image
             AspectRatio(
               aspectRatio: 18.0 / 11.0,
-              child: Image.asset('Images/unicorn.png'),
+              child: Image.asset(image),
             ),
             Padding(
               // genaue Eckdaten von von allen seiten wie groß das feld sein soll
@@ -40,7 +42,7 @@ class KaimWVState extends State<KaimWVCard> {
                   Divider(
                     height: 20,
                   ),
-                  Center(child: Text('KaimVP')),
+                  Center(child: Text('Kaffeemaschine')),
                 ],
               ),
             ),

@@ -1,9 +1,9 @@
 import 'package:FIW_Studi_App/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/Coffee/CoffeeView.dart';
+import 'package:FIW_Studi_App/Coffee/coffee_view.dart';
 import 'dart:async';
 import 'package:FIW_Studi_App/globals.dart' as globals;
-import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart';
+import 'package:FIW_Studi_App/Networking/networking_functions.dart';
 
 class CoffeeButton extends StatefulWidget {
   @override

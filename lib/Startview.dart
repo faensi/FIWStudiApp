@@ -1,10 +1,10 @@
-import 'package:FIW_Studi_App/Coffee/CoffeeCard.dart';
-import 'package:FIW_Studi_App/Vorlesungsplaner/VorlesungsplanerCard.dart';
-import 'package:FIW_Studi_App/FSnews/FSnewsCard.dart';
+import 'package:FIW_Studi_App/Coffee/coffee_card.dart';
+import 'package:FIW_Studi_App/Vorlesungsplaner/vorlesungsplaner_card.dart';
+import 'package:FIW_Studi_App/FSnews/fsnews_card.dart';
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/UI/NavDrawer.dart';
-import 'package:FIW_Studi_App/KaimWebview/KaimWVCard.dart';
-import 'UI/Style.dart';
+import 'package:FIW_Studi_App/UI/nav_drawer.dart';
+import 'package:FIW_Studi_App/KaimWebview/kaim_webview_card.dart';
+import 'UI/style.dart';
 
 class Startview extends StatelessWidget {
   @override

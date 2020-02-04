@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/UI/Colors.dart';
-import 'package:FIW_Studi_App/Vorlesungsplaner/VorlesungsplanerDetail.dart';
+import 'package:FIW_Studi_App/Vorlesungsplaner/vorlesungsplaner_detail.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
 
 class VorlesungsplanerSemester extends StatelessWidget {

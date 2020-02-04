@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../UI/Colors.dart';
 
 class FSnewsViewState extends StatelessWidget {
   @override

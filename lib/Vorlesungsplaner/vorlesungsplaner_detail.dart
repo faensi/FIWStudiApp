@@ -1,4 +1,4 @@
-import 'package:FIW_Studi_App/Vorlesungsplaner/Note.dart';
+import 'package:FIW_Studi_App/Vorlesungsplaner/note.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
 

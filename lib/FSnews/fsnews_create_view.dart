@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/UI/Colors.dart';
-import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart' as neNet;
-import 'package:FIW_Studi_App/FSnews/FSnewsView.dart';
+import 'package:FIW_Studi_App/Networking/networking_functions.dart' as neNet;
+import 'package:FIW_Studi_App/FSnews/fsnews_view.dart';
 
 class FSnewsCreateView extends StatelessWidget {
   static final TextEditingController _title = new TextEditingController();

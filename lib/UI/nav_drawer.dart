@@ -1,9 +1,8 @@
-import 'package:FIW_Studi_App/FSnews/FSnewsView.dart';
-import 'package:FIW_Studi_App/Coffee/CoffeeView.dart';
-import 'package:FIW_Studi_App/UI/Colors.dart';
-import 'package:FIW_Studi_App/Vorlesungsplaner/VorlesungsplanerView.dart';
+import 'package:FIW_Studi_App/FSnews/fsnews_view.dart';
+import 'package:FIW_Studi_App/Coffee/coffee_view.dart';
+import 'package:FIW_Studi_App/Vorlesungsplaner/vorlesungsplaner_view.dart';
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/UI/LoginForm.dart';
+import 'package:FIW_Studi_App/UI/login_form.dart';
 
 class NavDrawer extends StatelessWidget {
   @override

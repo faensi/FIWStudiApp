@@ -1,7 +1,6 @@
-import 'package:FIW_Studi_App/FSnews/FSnewsCreateView.dart';
+import 'package:FIW_Studi_App/FSnews/fsnews_create_view.dart';
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/UI/Colors.dart';
-import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart';
+import 'package:FIW_Studi_App/Networking/networking_functions.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
 import 'dart:async';
 
