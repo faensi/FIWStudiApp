@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:FIW_Studi_App/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Coffee/CoffeeView.dart';
-import 'package:flutter/material.dart';
 import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:FIW_Studi_App/globals.dart' as globals;
 import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart';
 
@@ -59,16 +56,17 @@ class CoffeeButtonState extends State<CoffeeButton> {
   void coffeeLogic() {
     if (globals.cState == "10") {
       cofImageAdr = "Images/Coffee_full.png";
-      cofStatus = "Kaffee gemacht" + "\n" + globals.displayTime();
+      cofStatus = "Kaffee gemacht" + "\n" + HelperFunctions.displayTime();
     } else if (globals.cState == "20") {
       cofImageAdr = "Images/Coffee_shutoff.png";
-      cofStatus = "Kaffeemaschine aus" + "\n" + globals.displayTime();
+      cofStatus = "Kaffeemaschine aus" + "\n" + HelperFunctions.displayTime();
     } else if (globals.cState == "30") {
       cofImageAdr = "Images/Coffee_empty.png";
-      cofStatus = "Kaffeemaschine leer" + "\n" + globals.displayTime();
+      cofStatus = "Kaffeemaschine leer" + "\n" + HelperFunctions.displayTime();
     } else if (globals.cState == "40") {
       cofImageAdr = "Images/Coffee_broken.png";
-      cofStatus = "Kaffeemaschine defekt" + "\n" + globals.displayTime();
+      cofStatus =
+          "Kaffeemaschine defekt" + "\n" + HelperFunctions.displayTime();
     } else {
       print("Error");
     }
@@ -77,15 +75,7 @@ class CoffeeButtonState extends State<CoffeeButton> {
   @override
   void initState() {
     super.initState();
-    getCData();
-
-    _timer = Timer.periodic(Duration(seconds: 3), (Timer t) {
-      if (mounted)
-        setState(() {
-          getCData();
-          coffeeLogic();
-        });
-    });
+    _iniData();
   }
 
   //dispose ist dazu da, damit es keine Memory leaks gibt
@@ -93,5 +83,17 @@ class CoffeeButtonState extends State<CoffeeButton> {
   void dispose() {
     _timer.cancel();
     super.dispose();
+  }
+
+  Future<void> _iniData() async {
+    await getCData();
+    coffeeLogic();
+    _timer = Timer.periodic(Duration(seconds: 3), (Timer t) {
+      if (mounted)
+        setState(() {
+          getCData();
+          coffeeLogic();
+        });
+    });
   }
 }
