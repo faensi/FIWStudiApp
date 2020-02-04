@@ -4,11 +4,11 @@ import 'package:FIW_Studi_App/Networking/networking_functions.dart' as net;
 class KaimWVCard extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return KaimWVState();
+    return _KaimWVState();
   }
 }
 
-class KaimWVState extends State<KaimWVCard> {
+class _KaimWVState extends State<KaimWVCard> {
   @override
   Widget build(BuildContext context) {
     return InkWell(

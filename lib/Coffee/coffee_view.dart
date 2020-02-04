@@ -1,7 +1,6 @@
 import 'package:FIW_Studi_App/Coffee/coffee_button.dart';
 import 'package:FIW_Studi_App/Coffee/coffee_headline.dart';
 import 'package:FIW_Studi_App/Coffee/coffee_text.dart';
-import 'package:FIW_Studi_App/style.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Networking/networking_functions.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
@@ -9,26 +8,16 @@ import 'package:FIW_Studi_App/globals.dart' as globals;
 class CoffeeView extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return CoffeeViewState();
+    return _CoffeeViewState();
   }
 }
 
-class CoffeeViewState extends State<CoffeeView> {
+class _CoffeeViewState extends State<CoffeeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("COFFEE"),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.vpn_key),
-            color: studiAppWhite,
-            onPressed: () {
-              globals.isLoggedIn = false;
-              setState(() {});
-            },
-          ),
-        ],
+        title: Text("Kaffeemaschine"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -43,66 +32,73 @@ class CoffeeViewState extends State<CoffeeView> {
           Divider(
             height: 20,
           ),
-          /*ButtonBar(
-            alignment: MainAxisAlignment.center,
-            children: <Widget>[
-              new RaisedButton(
-                onPressed: () {
-                  globals.isLoggedIn = true;
-                  print(globals.isLoggedIn);
-                  setState(() {});
-                },
-                child: const Text("true"),
-              ),
-              new RaisedButton(
-                onPressed: () {
-                  globals.isLoggedIn = false;
-                  print(globals.isLoggedIn);
-                  setState(() {});
-                },
-                child: const Text("false"),
-              ),
-              new RaisedButton(
-                onPressed: () {
-                  setState(() {});
-                },
-                child: const Text("setState"),
-              ),
-            ],
-          ),
-          */
+          //_testButtonBar(),
           if (globals.isLoggedIn)
-            ButtonBar(
-              alignment: MainAxisAlignment.center,
-              children: <Widget>[
-                new RaisedButton(
-                  onPressed: () async {
-                    postState(10);
-                  },
-                  child: const Text("Fertig"),
-                ),
-                new RaisedButton(
-                  onPressed: () async {
-                    postState(20);
-                  },
-                  child: const Text("Aus"),
-                ),
-                new RaisedButton(
-                  onPressed: () async {
-                    postState(30);
-                  },
-                  child: const Text("Leer"),
-                ),
-                new RaisedButton(
-                  onPressed: () async {
-                    postState(40);
-                  },
-                  child: const Text("Defekt!"),
-                ),
-              ],
-            ),
+            _loggedInBar(),
         ],
       ),
+    );
+  }
+
+  Widget _loggedInBar() {
+    return ButtonBar(
+      alignment: MainAxisAlignment.center,
+      children: <Widget>[
+        RaisedButton(
+          onPressed: () async {
+            postState(10);
+          },
+          child: const Text("Fertig"),
+        ),
+        RaisedButton(
+          onPressed: () async {
+            postState(20);
+          },
+          child: const Text("Aus"),
+        ),
+        RaisedButton(
+          onPressed: () async {
+            postState(30);
+          },
+          child: const Text("Leer"),
+        ),
+        RaisedButton(
+          onPressed: () async {
+            postState(40);
+          },
+          child: const Text("Defekt!"),
+        ),
+      ],
+    );
+  }
+
+  Widget _testButtonBar() {
+    return ButtonBar(
+      alignment: MainAxisAlignment.center,
+      children: <Widget>[
+        RaisedButton(
+          onPressed: () {
+            globals.isLoggedIn = true;
+            print(globals.isLoggedIn);
+            setState(() {});
+          },
+          child: const Text("true"),
+        ),
+        RaisedButton(
+          onPressed: () {
+            globals.isLoggedIn = false;
+            print(globals.isLoggedIn);
+            setState(() {});
+          },
+          child: const Text("false"),
+        ),
+        RaisedButton(
+          onPressed: () {
+            setState(() {});
+          },
+          child: const Text("setState"),
+        ),
+      ],
     );
   }
 }

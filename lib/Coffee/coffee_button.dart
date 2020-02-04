@@ -10,11 +10,11 @@ import '../globals.dart';
 class CoffeeButton extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return CoffeeButtonState();
+    return _CoffeeButtonState();
   }
 }
 
-class CoffeeButtonState extends State<CoffeeButton> {
+class _CoffeeButtonState extends State<CoffeeButton> {
   Timer _timer;
 
   @override

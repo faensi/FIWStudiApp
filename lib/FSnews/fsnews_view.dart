@@ -7,11 +7,11 @@ import 'dart:async';
 class FSnewsView extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return FSnewsViewState();
+    return _FSnewsViewState();
   }
 }
 
-class FSnewsViewState extends State<FSnewsView> {
+class _FSnewsViewState extends State<FSnewsView> {
   Timer _timer;
 
   @override

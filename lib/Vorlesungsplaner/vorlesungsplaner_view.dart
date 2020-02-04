@@ -17,32 +17,34 @@ class VorlesungsplanerView extends StatelessWidget {
           return Container(
             child: Center(
               child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    GestureDetector(
-                      onTap: () {
-                        globals.degreeProgramm = studiengaenge[index];
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => VorlesungsplanerSemester(),
-                          ),
-                        );
-                      },
-                      child: Card(
-                        child: Container(
-                            padding: EdgeInsets.all(15.0),
-                            child: Row(
-                              children: <Widget>[
-                                Text("Name: "),
-                                Text(studiengaenge[index],
-                                    style: TextStyle(
-                                        fontSize: 18.0, color: Colors.black87)),
-                              ],
-                            )),
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: () {
+                      globals.degreeProgramm = studiengaenge[index];
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => VorlesungsplanerSemester(),
+                        ),
+                      );
+                    },
+                    child: Card(
+                      child: Container(
+                        padding: EdgeInsets.all(15.0),
+                        child: Row(
+                          children: <Widget>[
+                            Text("Name: "),
+                            Text(studiengaenge[index],
+                                style: TextStyle(
+                                    fontSize: 18.0, color: Colors.black87)),
+                          ],
+                        ),
                       ),
                     ),
-                  ]),
+                  ),
+                ],
+              ),
             ),
           );
         },
