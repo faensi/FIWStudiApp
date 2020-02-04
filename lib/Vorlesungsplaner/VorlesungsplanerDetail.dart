@@ -1,7 +1,6 @@
 import 'package:FIW_Studi_App/Vorlesungsplaner/Note.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
-import 'package:FIW_Studi_App/UI/Colors.dart';
 
 class VorlesungsplanerDetail extends StatefulWidget {
   @override
@@ -16,7 +15,6 @@ class VorlesungsplanerDetailState extends State<VorlesungsplanerDetail> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Wähle deinen Studiengang aus"),
-        backgroundColor: studiAppGreen,
       ),
       body: ListView.builder(
         itemCount: globals.insertSize,

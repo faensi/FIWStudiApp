@@ -26,6 +26,9 @@ class VorlesungsplanerCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  Divider(
+                    height: 20,
+                  ),
                   Center(child: Text('Vorlesungsplaner')),
                 ],
               ),

@@ -11,7 +11,6 @@ class VorlesungsplanerView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Wähle deinen Studiengang aus"),
-        backgroundColor: studiAppGreen,
       ),
       body: ListView.builder(
         itemCount: studiengaenge.length,
