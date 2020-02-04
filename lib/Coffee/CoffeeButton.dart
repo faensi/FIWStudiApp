@@ -11,14 +11,13 @@ import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart';
 class CoffeeButton extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    //new Timer.periodic(Duration(seconds: 3), (Timer t) => CoffeeButtonState());
     return CoffeeButtonState();
   }
 }
 
 class CoffeeButtonState extends State<CoffeeButton> {
-  //final String _assetPath;
-  //  CoffeeBannerState(this._assetPath);
+  Timer _timer;
+
   @override
   Widget build(BuildContext context) {
     // erzeugt Container mit Größe 200x200 Pixel für den KaffeeButton
@@ -79,13 +78,20 @@ class CoffeeButtonState extends State<CoffeeButton> {
   void initState() {
     super.initState();
     getCData();
-    //TODO: check out how to refresh
-    new Timer.periodic(
-      Duration(seconds: 3),
-      (Timer t) => setState(() {
-        getCData();
-        coffeeLogic();
-      }),
-    );
+
+    _timer = Timer.periodic(Duration(seconds: 3), (Timer t) {
+      if (mounted)
+        setState(() {
+          getCData();
+          coffeeLogic();
+        });
+    });
+  }
+
+  //dispose ist dazu da, damit es keine Memory leaks gibt
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 }
