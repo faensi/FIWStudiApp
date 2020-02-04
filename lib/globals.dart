@@ -16,15 +16,10 @@ DateTime cLastTime;
 String cUserName;
 
 //time functions:
-String displayTime() {
-  return cLastTime.toString().substring(0, 19);
-}
-
-String getIso8601Time() {
-  return DateTime.now().toIso8601String().substring(0, 19) + "+00:00";
-}
 
 //news:
 List<dynamic> newsData;
 
 //coffee:
+String cofImageAdr = "Images/Coffee_full.png";
+String cofStatus = "Der Status wird geladen";

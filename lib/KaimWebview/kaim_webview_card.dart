@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/Coffee/CoffeeView.dart';
-import 'package:FIW_Studi_App/Coffee/CoffeeButton.dart';
-import 'package:FIW_Studi_App/globals.dart';
-import 'package:FIW_Studi_App/KaimWebview/KaimWView.dart';
+import 'package:FIW_Studi_App/Networking/networking_functions.dart' as net;
 
 class KaimWVCard extends StatefulWidget {
   @override
@@ -14,21 +11,21 @@ class KaimWVCard extends StatefulWidget {
 class KaimWVState extends State<KaimWVCard> {
   @override
   Widget build(BuildContext context) {
-    // macht die "Card" anklickbar
     return InkWell(
       onTap: () {
-        Navigator.push(
+        net.launchURL(context);
+/*        Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => KaimWView()),
+
         );
+ */
       },
       child: Card(
         clipBehavior: Clip.antiAlias,
         child: Column(
-          // Anordnung der Elemente, entweder Horizontal oder Vertikal
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            // Rellation von Breite und höhe der image
             AspectRatio(
               aspectRatio: 18.0 / 11.0,
               child: Image.asset('Images/unicorn.png'),
