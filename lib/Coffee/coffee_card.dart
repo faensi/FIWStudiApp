@@ -1,5 +1,11 @@
+import 'dart:async';
+
+import 'package:FIW_Studi_App/Networking/networking_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Coffee/coffee_view.dart';
+import 'package:FIW_Studi_App/globals.dart' as globals;
+
+import '../helper_functions.dart';
 
 class CoffeeCard extends StatefulWidget {
   @override
@@ -9,11 +15,12 @@ class CoffeeCard extends StatefulWidget {
 }
 
 class CoffeeCardState extends State<CoffeeCard> {
-  String image = cofImageAdr;
+  Timer _timer;
 
   @override
   Widget build(BuildContext context) {
     // macht die "Card" anklickbar
+    final image = globals.cofImageAdr;
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -50,5 +57,34 @@ class CoffeeCardState extends State<CoffeeCard> {
         ),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _iniData();
+  }
+
+  //dispose ist dazu da, damit es keine Memory leaks gibt
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  Future<void> _iniData() async {
+    _updateCoffeeImage();
+    _timer = Timer.periodic(Duration(seconds: 3), (Timer t) {
+      if (mounted)
+        setState(() {
+          _updateCoffeeImage();
+        });
+    });
+  }
+
+  Future<void> _updateCoffeeImage() async {
+    await getCData();
+    HelperFunctions.setCoffeeImageByState();
+    print("updateCoffeeCard ${globals.cofImageAdr}");
   }
 }

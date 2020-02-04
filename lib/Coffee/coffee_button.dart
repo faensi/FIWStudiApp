@@ -5,6 +5,8 @@ import 'dart:async';
 import 'package:FIW_Studi_App/globals.dart' as globals;
 import 'package:FIW_Studi_App/Networking/networking_functions.dart';
 
+import '../globals.dart';
+
 class CoffeeButton extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -31,7 +33,7 @@ class CoffeeButtonState extends State<CoffeeButton> {
             child: GestureDetector(
               onTap: () => setState(() {
                 getCData();
-                coffeeLogic();
+                HelperFunctions.setCoffeeImageByState();
               }),
               child: Image.asset(cofImageAdr),
             ),
@@ -53,25 +55,6 @@ class CoffeeButtonState extends State<CoffeeButton> {
     );
   }
 
-  void coffeeLogic() {
-    if (globals.cState == "10") {
-      cofImageAdr = "Images/Coffee_full.png";
-      cofStatus = "Kaffee gemacht" + "\n" + HelperFunctions.displayTime();
-    } else if (globals.cState == "20") {
-      cofImageAdr = "Images/Coffee_shutoff.png";
-      cofStatus = "Kaffeemaschine aus" + "\n" + HelperFunctions.displayTime();
-    } else if (globals.cState == "30") {
-      cofImageAdr = "Images/Coffee_empty.png";
-      cofStatus = "Kaffeemaschine leer" + "\n" + HelperFunctions.displayTime();
-    } else if (globals.cState == "40") {
-      cofImageAdr = "Images/Coffee_broken.png";
-      cofStatus =
-          "Kaffeemaschine defekt" + "\n" + HelperFunctions.displayTime();
-    } else {
-      print("Error");
-    }
-  }
-
   @override
   void initState() {
     super.initState();
@@ -86,14 +69,8 @@ class CoffeeButtonState extends State<CoffeeButton> {
   }
 
   Future<void> _iniData() async {
-    await getCData();
-    coffeeLogic();
     _timer = Timer.periodic(Duration(seconds: 3), (Timer t) {
-      if (mounted)
-        setState(() {
-          getCData();
-          coffeeLogic();
-        });
+      if (mounted) setState(() {});
     });
   }
 }

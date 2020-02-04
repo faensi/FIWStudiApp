@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/globals.dart';
+import 'package:FIW_Studi_App/globals.dart' as globals;
 
 class HelperFunctions {
   static MaterialColor createMaterialColor(Color color) {
@@ -23,10 +23,32 @@ class HelperFunctions {
   }
 
   static String displayTime() {
-    return cLastTime.toString().substring(0, 19);
+    return globals.cLastTime.toString().substring(0, 19);
   }
 
   static String getIso8601Time() {
     return DateTime.now().toIso8601String().substring(0, 19) + "+00:00";
+  }
+
+  static void setCoffeeImageByState() {
+    if (globals.cState == "10") {
+      globals.cofImageAdr = "Images/Coffee_full.png";
+      globals.cofStatus =
+          "Kaffee gemacht" + "\n" + HelperFunctions.displayTime();
+    } else if (globals.cState == "20") {
+      globals.cofImageAdr = "Images/Coffee_shutoff.png";
+      globals.cofStatus =
+          "Kaffeemaschine aus" + "\n" + HelperFunctions.displayTime();
+    } else if (globals.cState == "30") {
+      globals.cofImageAdr = "Images/Coffee_empty.png";
+      globals.cofStatus =
+          "Kaffeemaschine leer" + "\n" + HelperFunctions.displayTime();
+    } else if (globals.cState == "40") {
+      globals.cofImageAdr = "Images/Coffee_broken.png";
+      globals.cofStatus =
+          "Kaffeemaschine defekt" + "\n" + HelperFunctions.displayTime();
+    } else {
+      print("Error");
+    }
   }
 }

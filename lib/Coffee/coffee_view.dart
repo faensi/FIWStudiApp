@@ -12,9 +12,6 @@ class CoffeeView extends StatefulWidget {
   }
 }
 
-String cofImageAdr = "Images/Coffee_full.png";
-String cofStatus = "Der Status wird geladen";
-
 class CoffeeViewState extends State<CoffeeView> {
   @override
   Widget build(BuildContext context) {

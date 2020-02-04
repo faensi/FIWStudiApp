@@ -21,3 +21,5 @@ String cUserName;
 List<dynamic> newsData;
 
 //coffee:
+String cofImageAdr = "Images/Coffee_full.png";
+String cofStatus = "Der Status wird geladen";
