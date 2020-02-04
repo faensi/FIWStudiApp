@@ -11,74 +11,65 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext login) {
-    return MaterialApp(
-      title: "Login",
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text('Login'),
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-              semanticLabel: 'Back',
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text('Login'),
+      ),
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          children: <Widget>[
+            SizedBox(height: 80.0),
+            Column(
+              children: <Widget>[
+                Image.asset(''),
+                SizedBox(height: 16.0),
+                Text(
+                  'Admin Login für Fachschaftler',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ],
             ),
-            onPressed: () {
-              Navigator.pop(login);
-            },
-          ),
-        ),
-        body: SafeArea(
-          child: ListView(
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
-            children: <Widget>[
-              SizedBox(height: 80.0),
-              Column(
-                children: <Widget>[
-                  Image.asset(''),
-                  SizedBox(height: 16.0),
-                  Text('Admin Login für Fachschaftler'),
-                ],
+            SizedBox(height: 120),
+            TextField(
+              autocorrect: false,
+              controller: _user,
+              decoration: InputDecoration(
+                filled: true,
+                labelText: 'k-nummer',
               ),
-              SizedBox(height: 120),
-              TextField(
-                autocorrect: false,
-                controller: _user,
-                decoration: InputDecoration(
-                  filled: true,
-                  labelText: 'k-nummer',
+            ),
+            SizedBox(height: 12.0),
+            TextField(
+              autocorrect: false,
+              controller: _pass,
+              decoration: InputDecoration(
+                filled: true,
+                labelText: 'Passwort',
+              ),
+              obscureText: true,
+            ),
+            ButtonBar(
+              children: <Widget>[
+                FlatButton(
+                  child: Text('Cancel'),
+                  onPressed: () {
+                    Navigator.pop(login);
+                  },
                 ),
-              ),
-              SizedBox(height: 12.0),
-              TextField(
-                autocorrect: false,
-                controller: _pass,
-                decoration: InputDecoration(
-                  filled: true,
-                  labelText: 'Passwort',
-                ),
-                obscureText: true,
-              ),
-              ButtonBar(
-                children: <Widget>[
-                  FlatButton(
-                    child: Text('Cancel'),
-                    onPressed: () {
-                      Navigator.pop(login);
-                    },
-                  ),
-                  RaisedButton(
-                    child: Text('Next'),
-                    onPressed: () {
-                      globals.kNumber = this.username;
-                      globals.password = this.password;
-                      auth.checkAuth();
-                      Navigator.pop(login);
-                    },
-                  )
-                ],
-              ),
-            ],
-          ),
+                RaisedButton(
+                  child: Text('Next'),
+                  onPressed: () {
+                    globals.kNumber = this.username;
+                    globals.password = this.password;
+                    auth.checkAuth();
+                    Navigator.pop(login);
+                  },
+                )
+              ],
+            ),
+          ],
         ),
       ),
     );
