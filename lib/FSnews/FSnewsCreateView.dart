@@ -19,7 +19,6 @@ class FSnewsCreateView extends StatelessWidget {
         // beschreibt die Appbar
         appBar: AppBar(
           title: Text('FSnewsDetailView'),
-          backgroundColor: studiAppGreen,
           //beschreibt den Zurückpfeil oben links in der app
           leading: IconButton(
             icon: Icon(

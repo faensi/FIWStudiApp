@@ -20,13 +20,13 @@ class NavDrawer extends StatelessWidget {
             accountEmail: null,
             //beschreibt das Bild im Drawer
             currentAccountPicture: new CircleAvatar(
-              backgroundColor: studiApppurple,
+              //TODO: backgroundColor: studiAppPurple,
               child: new Text("FS"),
             ),
             //beschreibt die Boxfarbe
             decoration: BoxDecoration(
-              color: studiAppGreen,
-            ),
+                //TODO:  color: studiAppGreen,
+                ),
           ),
           //beschreibt ein Element der ListView
           ListTile(

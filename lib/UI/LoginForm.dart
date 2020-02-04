@@ -20,7 +20,6 @@ class LoginForm extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text('Login'),
-          backgroundColor: studiAppGreen,
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,

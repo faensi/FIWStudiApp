@@ -3,6 +3,9 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:FIW_Studi_App/globals.dart' as globals;
+import 'package:flutter_custom_tabs/flutter_custom_tabs.dart';
+import 'package:flutter/material.dart';
+import 'package:FIW_Studi_App/helper_functions.dart';
 
 final String coffeeGetUrl =
     "https://apistaging.fiw.fhws.de/studi-app/api/coffee-machine/getCurrentState";
@@ -15,7 +18,7 @@ Future<http.Response> postNews(String title, String text) async {
   Map data = {
     "image": "",
     "text": text,
-    "time": globals.getIso8601Time(),
+    "time": HelperFunctions.getIso8601Time(),
     "title": title,
     "userName": username,
   };
@@ -34,7 +37,7 @@ Future<http.Response> postState(int pState) async {
 
   Map data = {
     "state": pState,
-    "statusTime": globals.getIso8601Time(),
+    "statusTime": HelperFunctions.getIso8601Time(),
     "userName": globals.kNumber,
   };
   var body = json.encode(data);
@@ -69,4 +72,29 @@ Future<String> getCData() async {
   globals.cUserName = globals.cData[
       "userName"]; //momentan nicht in Verwendung; hier Aufgrund der Datenabnk
   return "Success!";
+}
+
+void launchURL(BuildContext context) async {
+  try {
+    await launch(
+      'https://unicorns.diamonds/vp',
+      option: new CustomTabsOption(
+        toolbarColor: Theme.of(context).primaryColor,
+        enableDefaultShare: true,
+        enableUrlBarHiding: true,
+        showPageTitle: true,
+        animation: new CustomTabsAnimation.slideIn(),
+        // or user defined animation.
+        extraCustomTabs: <String>[
+          // ref. https://play.google.com/store/apps/details?id=org.mozilla.firefox
+          'org.mozilla.firefox',
+          // ref. https://play.google.com/store/apps/details?id=com.microsoft.emmx
+          'com.microsoft.emmx',
+        ],
+      ),
+    );
+  } catch (e) {
+    // An exception is thrown if browser app is not installed on Android device.
+    debugPrint(e.toString());
+  }
 }

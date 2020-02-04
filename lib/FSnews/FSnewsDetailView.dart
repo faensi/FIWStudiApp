@@ -10,16 +10,6 @@ class FSnewsViewState extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text('FSnewsView'),
-          backgroundColor: studiAppGreen,
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-              semanticLabel: 'Back',
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
