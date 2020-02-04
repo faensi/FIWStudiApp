@@ -1,6 +1,7 @@
 import 'package:FIW_Studi_App/Coffee/coffee_button.dart';
 import 'package:FIW_Studi_App/Coffee/coffee_headline.dart';
 import 'package:FIW_Studi_App/Coffee/coffee_text.dart';
+import 'package:FIW_Studi_App/style.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Networking/networking_functions.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
@@ -18,6 +19,16 @@ class CoffeeViewState extends State<CoffeeView> {
     return Scaffold(
       appBar: AppBar(
         title: Text("COFFEE"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.vpn_key),
+            color: studiAppWhite,
+            onPressed: () {
+              globals.isLoggedIn = false;
+              setState(() {});
+            },
+          ),
+        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +43,7 @@ class CoffeeViewState extends State<CoffeeView> {
           Divider(
             height: 20,
           ),
-          ButtonBar(
+          /*ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
               new RaisedButton(
@@ -59,6 +70,7 @@ class CoffeeViewState extends State<CoffeeView> {
               ),
             ],
           ),
+          */
           if (globals.isLoggedIn)
             ButtonBar(
               alignment: MainAxisAlignment.center,
