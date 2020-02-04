@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/login_form.dart';
 
 import '../globals.dart';
-import 'Style.dart';
+import '../style.dart';
 
 class NavDrawer extends StatelessWidget {
   @override

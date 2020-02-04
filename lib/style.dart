@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../helper_functions.dart';
+import 'helper_functions.dart';
 
 // liste von Konstanten die es noch nicht in die App geschafft haben
 // diese sollen feste designgrößen beschreiben
