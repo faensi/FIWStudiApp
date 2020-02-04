@@ -99,7 +99,7 @@ class Note {
     }
     final filteredList = _convertToListWithLectures(resultList);
 
-    if (filteredList.isEmpty) return null;
+    if (filteredList.isEmpty) return List<Course>();
     return filteredList;
   }
 

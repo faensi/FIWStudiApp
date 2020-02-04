@@ -10,43 +10,53 @@ class VorlesungsplanerDetail extends StatefulWidget {
 }
 
 class VorlesungsplanerDetailState extends State<VorlesungsplanerDetail> {
+  List<Course> _courseList;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Wähle deinen Studiengang aus"),
+        title: Text("Veranstaltungsübersicht"),
       ),
-      body: ListView.builder(
-        itemCount: globals.insertSize,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            child: Center(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Card(
-                      child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          child: Row(
-                            children: <Widget>[
-                              Text("Name: "),
-                              //dataList[index],
-                            ],
-                          )),
-                    ),
-                  ]),
-            ),
-          );
-        },
-      ),
+      body: _courseList == null
+          ? Center(child: CircularProgressIndicator())
+          : _buildCourseList(),
+    );
+  }
+
+  Widget _buildCourseList() {
+    if (_courseList.isEmpty) {
+      return Center(
+        child: Text("Es wurden leider keine Veranstaltungen gefunden :.("),
+      );
+    }
+
+    return ListView.separated(
+      itemCount: _courseList.length,
+      itemBuilder: (BuildContext context, int index) {
+        return ListTile(
+          title: Text(_courseList[index].title),
+          subtitle: Text(_courseList[index].lecturers),
+        );
+      },
+      separatorBuilder: (context, index) {
+        return Divider();
+      },
     );
   }
 
   @override
   void initState() {
     super.initState();
-    Note n = Note(globals.semester, globals.degreeProgramm, globals.offset,
+    _initData();
+  }
+
+  Future<void> _initData() async {
+    final note = Note(globals.semester, globals.degreeProgramm, globals.offset,
         globals.insertSize);
-    var dataList = n.getInfo;
+    final courseList = await note.getCourseList();
+    setState(() {
+      _courseList = courseList;
+    });
   }
 }
