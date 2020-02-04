@@ -85,6 +85,6 @@ class CoffeeCardState extends State<CoffeeCard> {
   Future<void> _updateCoffeeImage() async {
     await getCData();
     HelperFunctions.setCoffeeImageByState();
-    print("updateCoffeeCard ${globals.cofImageAdr}");
+    //print("updateCoffeeCard ${globals.cofImageAdr}");
   }
 }
