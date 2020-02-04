@@ -9,24 +9,15 @@ class Note {
   int insertSize = 10; // Anzahl anzuzeigender Elemente
   var q = ""; // bestimmte Query, nur für eventuelle spätere Updates
 
-  Note(int sem, String degreeProgram, int offset, int insertSize) {
-    this.sem = sem;
-    this.degreeProgram = degreeProgram;
-    this.offset = offset;
-    this.insertSize = insertSize;
-  }
+// Kurzform des Konstruktors mit this.x=x
+  Note(this.sem, this.degreeProgram, this.offset, this.insertSize);
 
-  void getInfo() {
-    restApi(sem, degreeProgram, offset, insertSize, q);
-  }
-
-  static Future<List<List<String>>> restApi(int sem, String degreeProgram,
-      int offset, int insertSize, String q) async {
+  Future<List<Course>> getCourseList() async {
 // ========== Schritt 1 - REST-API ansprechen und Liste aller weiteren möglichen Routes ziehen ==========
     var url = 'https://fiwis.fiw.fhws.de/fiwis2/api';
 
     http.Response response = await http.get(Uri.encodeFull(url),
-        headers: {"Accept": "*/*"} // univsereller Content-Type
+        headers: {"Accept": "*/*"} // universeller Content-Type
         );
 
     //if(response.statusCode==200) {
@@ -67,21 +58,22 @@ class Note {
         insertSize.toString();
     String ergebnisUrl = urlClasses + classesFilter;
 
-    http.Response responseClasses = await http
-        .get(Uri.encodeFull(ergebnisUrl), headers: {
-      "Accept": "*/*"
-    } // Anmerkung: automatisches Ziehen des MIME-Types generiert einen 400 Fehler, daher "Notlösung"
-            );
+    http.Response responseClasses = await http.get(
+      Uri.encodeFull(ergebnisUrl),
+      headers: {
+        "Accept": "*/*"
+      }, // Anmerkung: automatisches Ziehen des MIME-Types generiert einen 400 Fehler, daher "Notlösung"
+    );
 
     var arrayResult;
 
     if (responseClasses.statusCode == 200) {
-      arrayResult = responseClasses.body;
+      arrayResult = responseClasses.bodyBytes;
     } else {
       print("Unbekanter Fehler" + responseClasses.statusCode.toString());
     }
 
-    var jsonResult = json.decode(arrayResult);
+    var jsonResult = jsonDecode(utf8.decode(arrayResult));
     List<List<String>> resultList = new List(insertSize);
 
     for (int i = 0; i < jsonResult.length; i++) {
@@ -105,7 +97,26 @@ class Note {
 
       // Anmerkung: mit jsonResult[i]["icalUrl"]["href"] bekomme ich die URL zu einer ical.Datei
     }
-    if (resultList[0] == null) print("Liste leer");
-    return resultList;
+    final filteredList = _convertToListWithLectures(resultList);
+
+    if (filteredList.isEmpty) return null;
+    return filteredList;
   }
+
+  static List<Course> _convertToListWithLectures(List<List<String>> list) {
+    List<Course> listWithValues = [];
+    for (final li in list) {
+      if (li == null || li[0] == null || li[1] == null) continue;
+      final lecture = Course(li[0], li[1]);
+      listWithValues.add(lecture);
+    }
+    return listWithValues;
+  }
+}
+
+class Course {
+  String title;
+  String lecturers;
+
+  Course(this.title, this.lecturers);
 }
