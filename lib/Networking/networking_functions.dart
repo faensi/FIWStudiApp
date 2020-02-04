@@ -59,7 +59,7 @@ Future<String> getNewsData() async {
             basicAuth(globals.kNumber, globals.password),
         "Accept": "application/json"
       });
-  globals.newsData = jsonDecode(response.body);
+  globals.newsData = jsonDecode(utf8.decode(response.bodyBytes));
   return "Success!";
 }
 
