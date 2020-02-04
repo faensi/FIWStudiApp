@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:FIW_Studi_App/Coffee/CoffeeView.dart';
-import 'package:FIW_Studi_App/Coffee/CoffeeButton.dart';
-import 'package:FIW_Studi_App/globals.dart';
-import 'package:FIW_Studi_App/KaimWebview/KaimWView.dart';
+import 'package:FIW_Studi_App/Networking/NetworkingFunctions.dart' as net;
 
 class KaimWVCard extends StatefulWidget {
   @override
@@ -16,10 +13,13 @@ class KaimWVState extends State<KaimWVCard> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
+        net.launchURL(context);
+/*        Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => KaimWView()),
+
         );
+ */
       },
       child: Card(
         clipBehavior: Clip.antiAlias,
