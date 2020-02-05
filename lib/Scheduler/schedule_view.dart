@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
 
 class ScheduleView extends StatelessWidget {
-  final List<String> studiengaenge = ["bec", "inf", "bwi", "mis"];
+  final List<String> courseOfStudies = ["bec", "inf", "bwi", "mis"];
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ScheduleView extends StatelessWidget {
 
   Widget _buildSemesterListView() {
     return ListView.builder(
-      itemCount: studiengaenge.length,
+      itemCount: courseOfStudies.length,
       itemBuilder: (BuildContext context, int index) {
         return Container(
           child: Center(
@@ -26,7 +26,7 @@ class ScheduleView extends StatelessWidget {
               children: <Widget>[
                 GestureDetector(
                   onTap: () {
-                    globals.degreeProgramm = studiengaenge[index];
+                    globals.degreeProgramm = courseOfStudies[index];
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -40,7 +40,7 @@ class ScheduleView extends StatelessWidget {
                       child: Row(
                         children: <Widget>[
                           Text("Name: "),
-                          Text(studiengaenge[index],
+                          Text(courseOfStudies[index],
                               style: TextStyle(
                                   fontSize: 18.0, color: Colors.black87)),
                         ],
