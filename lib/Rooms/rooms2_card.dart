@@ -6,12 +6,10 @@ class Rooms2Card extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        /*Navigator.push(
+        Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ScheduleView()),
+          MaterialPageRoute(builder: (context) => Rooms()),
         );
-
-         */
       },
       child: Card(
         clipBehavior: Clip.antiAlias,
