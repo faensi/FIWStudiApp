@@ -41,9 +41,7 @@ class _CoffeeViewState extends State<CoffeeView> {
           Divider(
             height: 20,
           ),
-          //_testButtonBar(),
-          if (globals.isLoggedIn)
-            _loggedInBar(),
+          if (globals.isLoggedIn) _loggedInBar(),
         ],
       ),
     );
@@ -76,36 +74,6 @@ class _CoffeeViewState extends State<CoffeeView> {
             postState(40);
           },
           child: const Text("Defekt!"),
-        ),
-      ],
-    );
-  }
-
-  Widget _testButtonBar() {
-    return ButtonBar(
-      alignment: MainAxisAlignment.center,
-      children: <Widget>[
-        RaisedButton(
-          onPressed: () {
-            globals.isLoggedIn = true;
-            print(globals.isLoggedIn);
-            setState(() {});
-          },
-          child: const Text("true"),
-        ),
-        RaisedButton(
-          onPressed: () {
-            globals.isLoggedIn = false;
-            print(globals.isLoggedIn);
-            setState(() {});
-          },
-          child: const Text("false"),
-        ),
-        RaisedButton(
-          onPressed: () {
-            setState(() {});
-          },
-          child: const Text("setState"),
         ),
       ],
     );

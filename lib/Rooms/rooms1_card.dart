@@ -1,4 +1,4 @@
-import 'package:FIW_Studi_App/Scheduler/schedule_view.dart';
+import 'package:FIW_Studi_App/Rooms/free_rooms.dart';
 import 'package:flutter/material.dart';
 
 class Rooms1Card extends StatelessWidget {
@@ -6,12 +6,10 @@ class Rooms1Card extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        /*Navigator.push(
+        Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ScheduleView()),
+          MaterialPageRoute(builder: (context) => FreeRooms()),
         );
-
-         */
       },
       child: Card(
         clipBehavior: Clip.antiAlias,

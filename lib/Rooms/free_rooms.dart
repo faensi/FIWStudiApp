@@ -3,16 +3,17 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class HomePage extends StatefulWidget {
+class FreeRooms extends StatefulWidget {
   @override
-  HomePageState createState() => new HomePageState();
+  FreeRoomsState createState() => new FreeRoomsState();
 }
 
-class HomePageState extends State<HomePage> {
+class FreeRoomsState extends State<FreeRooms> {
   List data;
   var url = "https://fiwis.fiw.fhws.de/fiwis2/api";
   bool free;
-  Future getData() async {
+
+  Future _getData() async {
     var urlResponse =
         await http.get(Uri.encodeFull(url), headers: {"Accept": "*/*"});
     var urlHeader = urlResponse.headers;
@@ -44,7 +45,7 @@ class HomePageState extends State<HomePage> {
     return data;
   }
 
-  String checkTime(int index, var data) {
+  String _checkTime(int index, var data) {
     List timeList = new List(data.length);
     for (int i = 0; i < data.length; i++) {
       timeList[i] = DateTime.parse(data[i]["endTime"]);
@@ -60,7 +61,7 @@ class HomePageState extends State<HomePage> {
     }
   }
 
-  Color getColor() {
+  Color _getColor() {
     if (free == true) {
       return Colors.lightGreen;
     } else {
@@ -75,7 +76,7 @@ class HomePageState extends State<HomePage> {
         title: new Text("Room Statuses"),
       ),
       body: FutureBuilder(
-        future: getData(),
+        future: _getData(),
         builder: (context, projectSnap) {
           return ListView.builder(
             itemCount: data == null ? 0 : data.length,
@@ -85,10 +86,10 @@ class HomePageState extends State<HomePage> {
                   title: Text(data[index]["name"] + "\n",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 25.0, color: Colors.black)),
-                  subtitle: Text(checkTime(index, data),
+                  subtitle: Text(_checkTime(index, data),
                       //data[index]["startTime"] + " - " + data[index]["endTime"],
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 25.0, color: getColor())),
+                      style: TextStyle(fontSize: 25.0, color: _getColor())),
                 ),
               );
             },
@@ -101,6 +102,6 @@ class HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    this.getData();
+    this._getData();
   }
 }
