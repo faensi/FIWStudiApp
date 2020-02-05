@@ -8,7 +8,7 @@ import 'Rooms/rooms1_card.dart';
 import 'Rooms/rooms2_card.dart';
 import 'style.dart';
 
-class Startview extends StatelessWidget {
+class StartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
