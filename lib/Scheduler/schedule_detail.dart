@@ -1,15 +1,15 @@
-import 'package:FIW_Studi_App/Vorlesungsplaner/note.dart';
+import 'package:FIW_Studi_App/Scheduler/note.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
 
-class VorlesungsplanerDetail extends StatefulWidget {
+class ScheduleDetail extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _VorlesungsplanerDetailState();
+    return _ScheduleDetailState();
   }
 }
 
-class _VorlesungsplanerDetailState extends State<VorlesungsplanerDetail> {
+class _ScheduleDetailState extends State<ScheduleDetail> {
   List<Course> _courseList;
 
   @override

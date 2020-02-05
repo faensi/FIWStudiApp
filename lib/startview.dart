@@ -1,5 +1,5 @@
 import 'package:FIW_Studi_App/Coffee/coffee_card.dart';
-import 'package:FIW_Studi_App/Vorlesungsplaner/vorlesungsplaner_card.dart';
+import 'package:FIW_Studi_App/Scheduler/schedule_card.dart';
 import 'package:FIW_Studi_App/FSnews/fsnews_card.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/nav_drawer.dart';
@@ -25,7 +25,7 @@ class Startview extends StatelessWidget {
           children: <Widget>[
             CoffeeCard(),
             FSnewsCard(),
-            VorlesungsplanerCard(),
+            ScheduleCard(),
             KaimWVCard(),
           ],
         ),

@@ -97,13 +97,13 @@ class Note {
 
       // Anmerkung: mit jsonResult[i]["icalUrl"]["href"] bekomme ich die URL zu einer ical.Datei
     }
-    final filteredList = _convertToListWithLectures(resultList);
+    final filteredList = _convertToListWithCourses(resultList);
 
     if (filteredList.isEmpty) return List<Course>();
     return filteredList;
   }
 
-  static List<Course> _convertToListWithLectures(List<List<String>> list) {
+  static List<Course> _convertToListWithCourses(List<List<String>> list) {
     List<Course> listWithValues = [];
     for (final li in list) {
       if (li == null || li[0] == null || li[1] == null) continue;
