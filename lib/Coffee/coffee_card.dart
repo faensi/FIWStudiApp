@@ -1,10 +1,8 @@
 import 'dart:async';
-
 import 'package:FIW_Studi_App/Networking/networking_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Coffee/coffee_view.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
-
 import '../helper_functions.dart';
 
 class CoffeeCard extends StatefulWidget {
@@ -65,7 +63,7 @@ class _CoffeeCardState extends State<CoffeeCard> {
     _iniData();
   }
 
-  //dispose ist dazu da, damit es keine Memory leaks gibt
+  //dispose ist dazu da, damit es keine Memoryleaks gibt
   @override
   void dispose() {
     _timer.cancel();
@@ -85,6 +83,5 @@ class _CoffeeCardState extends State<CoffeeCard> {
   Future<void> _updateCoffeeImage() async {
     await getCData();
     HelperFunctions.setCoffeeImageByState();
-    //print("updateCoffeeCard ${globals.cofImageAdr}");
   }
 }

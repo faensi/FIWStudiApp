@@ -8,6 +8,7 @@ import 'package:FIW_Studi_App/UI/login_form.dart';
 import 'package:FIW_Studi_App/Networking/networking_functions.dart' as net;
 import '../globals.dart' as globals;
 import '../style.dart';
+import 'package:FIW_Studi_App/Networking/authorization.dart' as auth;
 
 class NavDrawer extends StatelessWidget {
   @override
@@ -85,16 +86,28 @@ class NavDrawer extends StatelessWidget {
             },
           ),
           Divider(),
-          ListTile(
-            title: Text("Login"),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LoginForm()),
-              );
-            },
-          ),
+          globals.isLoggedIn
+              ? ListTile(
+                  title: Text("Logout"),
+                  onTap: () {
+                    auth.logout();
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginForm()),
+                    );
+                  },
+                )
+              : ListTile(
+                  title: Text("Login"),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginForm()),
+                    );
+                  },
+                ),
           // fügt eine Leerzeile ein
           Divider(),
           ListTile(

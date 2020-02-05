@@ -63,7 +63,7 @@ class LoginForm extends StatelessWidget {
                   onPressed: () {
                     globals.kNumber = this.username;
                     globals.password = this.password;
-                    auth.checkAuth();
+                    auth.login();
                     Navigator.pop(login);
                   },
                 )

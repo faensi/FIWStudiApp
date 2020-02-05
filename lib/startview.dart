@@ -6,9 +6,16 @@ import 'package:FIW_Studi_App/UI/nav_drawer.dart';
 import 'package:FIW_Studi_App/KaimWebview/kaim_webview_card.dart';
 import 'Rooms/rooms1_card.dart';
 import 'Rooms/rooms2_card.dart';
+import 'helper_functions.dart';
 import 'style.dart';
+import 'globals.dart' as globals;
 
-class StartView extends StatelessWidget {
+class StartView extends StatefulWidget {
+  @override
+  _StartViewState createState() => _StartViewState();
+}
+
+class _StartViewState extends State<StartView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,5 +42,16 @@ class StartView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLogin();
+  }
+
+  Future<void> _loadLogin() async {
+    await HelperFunctions.loadLoginFromSharedPref();
+    print("geladen aus shared " + globals.kNumber);
   }
 }
