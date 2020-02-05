@@ -83,17 +83,22 @@ class _FSnewsViewState extends State<FSnewsView> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(
-          Icons.add,
-        ),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => FSnewsCreateView()),
-          );
-        },
+      floatingActionButton:
+          globals.isLoggedIn ? _buildButtonIfLoggedIn() : null,
+    );
+  }
+
+  Widget _buildButtonIfLoggedIn() {
+    return FloatingActionButton(
+      child: Icon(
+        Icons.add,
       ),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => FSnewsCreateView()),
+        );
+      },
     );
   }
 
