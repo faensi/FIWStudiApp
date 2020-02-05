@@ -18,6 +18,15 @@ class _CoffeeViewState extends State<CoffeeView> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Kaffeemaschine"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.vpn_key),
+            onPressed: () {
+              globals.isLoggedIn = false;
+              setState(() {});
+            },
+          ),
+        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
