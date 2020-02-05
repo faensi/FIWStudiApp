@@ -1,5 +1,11 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:FIW_Studi_App/model/Booking.dart';
+import 'package:FIW_Studi_App/model/Room.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:http/http.dart' as http;
 
 
 class Rooms extends StatefulWidget {
@@ -8,9 +14,11 @@ class Rooms extends StatefulWidget {
 }
 
 class _RoomsState extends State<Rooms> {
+  List<Room> roomDetails = [];
+  List<Booking> bookingDetails = [];
 
   // ignore: non_constant_identifier_names
-  Material MyItems (IconData icon, String heading, int color){
+  Material MyItems(IconData icon, String heading, int color) {
     return Material(
         color: Color(0xFFAED581),
         elevation: 18.0,
@@ -37,7 +45,7 @@ class _RoomsState extends State<Rooms> {
                       ),
 
                       //Icon
-                      Material (
+                      Material(
                         color: new Color(color),
                         borderRadius: BorderRadius.circular(18.0),
                         child: Padding(
@@ -45,7 +53,7 @@ class _RoomsState extends State<Rooms> {
                           child: Icon(
                             icon,
                             color: Colors.white,
-                            size: 32.0 ,
+                            size: 32.0,
                           ),
                         ),
                       )
@@ -64,36 +72,111 @@ class _RoomsState extends State<Rooms> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text ('Study Rooms',
-          style: TextStyle (
+        title: Text('Study Rooms',
+          style: TextStyle(
             color: Colors.black,
           ),
         ),
 
       ),
-      body: StaggeredGridView.count(
-        crossAxisCount: 1,
-        mainAxisSpacing: 18.0,
-        padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 9.0),
-        children: <Widget> [
-          MyItems (Icons.local_library, "I.2.15", 0xFF004D40),
-          MyItems (Icons.import_contacts,"I.2.24", 0xFF004D40),
-          MyItems (Icons.laptop, "I.3.19", 0xFF004D40),
-          MyItems (Icons.settings_input_hdmi, "I.3.20", 0xFF004D40),
-          MyItems (Icons.group, "I.3.21", 0xFF004D40),
-          MyItems (Icons.local_library, "I.3.24", 0xFF004D40),
-        ],
-        staggeredTiles: [
-          StaggeredTile.extent(1, 180.0),
-          StaggeredTile.extent(1, 180.0),
-          StaggeredTile.extent(1, 180.0),
-          StaggeredTile.extent(1, 180.0),
-          StaggeredTile.extent(1, 180.0),
-          StaggeredTile.extent(1, 180.0),
-        ],
+      body:
+      FutureBuilder(
+        future: getRoomData(),
+        builder: (context, projectSnap) {
+          return ListView.builder(
+            itemCount: roomDetails == null ? 0 : roomDetails.length,
+            itemBuilder: (context, index) {
+              return Card(
+                  child: ListTile(
+                    title: Text(roomDetails[index].roomName + "\n",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 25.0, color: Colors.black)),
+                    subtitle: Text(checkTime(index),
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 25.0, color: _getColorFromHex(roomDetails[index].roomStatusColor)),
+              ),
+              ));
+            },
+          );
+        },
       ),
     );
   }
 
+
+  Future<List<Room>> getRoomData() async {
+    http.Response response = await http.get(
+        Uri.encodeFull(
+            'https://apistaging.fiw.fhws.de/fiwis2/api/roomstatuses/'));
+    var roomsData = jsonDecode(utf8.decode(response.bodyBytes));
+
+    for (var bookval in roomsData) {
+      Room room = Room(
+          bookval['bookingUrl'],
+          bookval['cns'],
+          bookval['id'],
+          bookval['personUrl'],
+          bookval['href'],
+          bookval['rel'],
+          bookval['type'],
+          bookval['roomName'],
+          bookval['roomStatus'],
+          bookval['roomStatusColor'],
+          bookval['roomStatusDisplay'],
+          bookval['self']);
+      getBookingData(room);
+      room.list = getBookingData(room) as List<Booking>;
+      roomDetails.add(room);
+    }
+    return roomDetails;
+  }
+
+  Future<List<Booking>> getBookingData(Room room) async {
+    http.Response response = await http.get(
+        Uri.encodeFull(room.bookingUrl));
+    var bookData = jsonDecode(utf8.decode(response.bodyBytes));
+
+    for (var bookval in bookData) {
+      Booking room = Booking(
+        bookval['description'],
+        bookval['endTime'],
+        bookval['externalCalendarUid'],
+        bookval['externalCalendarName'],
+        bookval['id'],
+        bookval['roomName'],
+        bookval['self'],
+        bookval['href'],
+        bookval['rel'],
+        bookval['type'],
+        bookval['startTime'],
+      );
+      bookingDetails.add(room);
+    }
+    return bookingDetails;
+  }
+
+  Color _getColorFromHex(String hexColor) {
+    hexColor = hexColor.replaceAll("#", "");
+    if (hexColor.length == 6) {
+      hexColor = "FF" + hexColor;
+    }
+    if (hexColor.length == 8) {
+      return Color(int.parse("0x$hexColor"));
+    }
+  }
+
+  String checkTime(int index) {
+    List<Booking> booking = roomDetails[index].list;
+    bool free;
+    for (int i = 0; i < booking.length; i++) {
+      var etime = DateTime.parse(booking[i].endTime);
+      var stime = DateTime.parse(booking[i].startTime);
+      if (DateTime.now().isBefore(etime) && DateTime.now().isAfter(stime)) {
+        free = false;
+        return "Room is not free";
+      }
+    }
+    return "Room is free";
+  }
 
 }
