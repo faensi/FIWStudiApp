@@ -1,3 +1,4 @@
+import 'package:FIW_Studi_App/style.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Scheduler/schedule_detail.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
@@ -36,14 +37,15 @@ class ScheduleSemester extends StatelessWidget {
                   },
                   child: Card(
                     child: Container(
-                        padding: EdgeInsets.all(15.0),
-                        child: Row(
-                          children: <Widget>[
-                            Text(semesterList[index].toString() + ". Semester",
-                                style: TextStyle(
-                                    fontSize: 18.0, color: Colors.black87)),
-                          ],
-                        )),
+                      padding: EdgeInsets.all(15.0),
+                      child: Row(
+                        children: <Widget>[
+                          Text(semesterList[index].toString() + ". Semester",
+                              style: TextStyle(
+                                  fontSize: 18.0, color: studiAppBlack)),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ],

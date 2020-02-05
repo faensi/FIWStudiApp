@@ -1,10 +1,12 @@
 import 'package:FIW_Studi_App/FSnews/fsnews_view.dart';
 import 'package:FIW_Studi_App/Coffee/coffee_view.dart';
+import 'package:FIW_Studi_App/Rooms/rooms1_card.dart';
+import 'package:FIW_Studi_App/Rooms/rooms2_card.dart';
 import 'package:FIW_Studi_App/Scheduler/schedule_view.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/login_form.dart';
-
-import '../globals.dart';
+import 'package:FIW_Studi_App/Networking/networking_functions.dart' as net;
+import '../globals.dart' as globals;
 import '../style.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -18,21 +20,21 @@ class NavDrawer extends StatelessWidget {
           //fslogin --> true
           // beschreibt den Drawer Kopf
           UserAccountsDrawerHeader(
-            accountName: Text("Fachschaft"),
+            accountName: globals.isLoggedIn
+                ? Text("Fachschaftler: " + globals.kNumber)
+                : null,
             accountEmail: null,
             //beschreibt das Bild im Drawer
-            currentAccountPicture: CircleAvatar(
-              backgroundColor: studiAppPurple,
-              child: isLoggedIn ? Text("FS") : null,
-            ),
-            //beschreibt die Boxfarbe
-            decoration: BoxDecoration(
-              color: studiAppGreen,
-            ),
+            currentAccountPicture: globals.isLoggedIn
+                ? CircleAvatar(
+                    backgroundColor: studiAppPurple,
+                    child: Text("FSI"),
+                  )
+                : null,
           ),
           //beschreibt ein Element der ListView
           ListTile(
-            title: Text("1. Kaffeemaschine"),
+            title: Text("Kaffeemaschine"),
             onTap: () {
               Navigator.push(
                 context,
@@ -41,7 +43,7 @@ class NavDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text("2. FS-News"),
+            title: Text("FS-News"),
             onTap: () {
               Navigator.push(
                 context,
@@ -50,7 +52,7 @@ class NavDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text("3. Vorlesungsssplaner"),
+            title: Text("Vorlesungsssplaner"),
             onTap: () {
               Navigator.push(
                 context,
@@ -58,6 +60,31 @@ class NavDrawer extends StatelessWidget {
               );
             },
           ),
+          ListTile(
+            title: Text("Kaim VP"),
+            onTap: () {
+              net.launchURL(context);
+            },
+          ),
+          ListTile(
+            title: Text("Rooms1"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Rooms1Card()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text("Rooms2"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Rooms2Card()),
+              );
+            },
+          ),
+          Divider(),
           ListTile(
             title: Text("Login"),
             onTap: () {
