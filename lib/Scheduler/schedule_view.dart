@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
 
 class ScheduleView extends StatelessWidget {
-  final List<String> courseOfStudies = ["bec", "inf", "bwi", "mis"];
+  final List<String> courseOfStudies = ["bec", "bin", "bwi", "mis"];
 
   @override
   Widget build(BuildContext context) {
