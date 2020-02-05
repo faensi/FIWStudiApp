@@ -1,14 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
-void main() {
-  runApp(new MaterialApp(
-    home: new HomePage(),
-  ));
-}
 
 class HomePage extends StatefulWidget {
   @override
@@ -85,10 +78,10 @@ class HomePageState extends State<HomePage> {
         future: getData(),
         builder: (context, projectSnap) {
           return ListView.builder(
-              itemCount: data == null ? 0 : data.length,
-              itemBuilder: (context, index) {
-                return Card(
-                    child: ListTile(
+            itemCount: data == null ? 0 : data.length,
+            itemBuilder: (context, index) {
+              return Card(
+                child: ListTile(
                   title: Text(data[index]["name"] + "\n",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 25.0, color: Colors.black)),
@@ -96,8 +89,10 @@ class HomePageState extends State<HomePage> {
                       //data[index]["startTime"] + " - " + data[index]["endTime"],
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 25.0, color: getColor())),
-                ));
-              });
+                ),
+              );
+            },
+          );
         },
       ),
     );
