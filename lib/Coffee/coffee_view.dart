@@ -4,7 +4,6 @@ import 'package:FIW_Studi_App/Coffee/coffee_text.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Networking/networking_functions.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
-import 'package:FIW_Studi_App/style.dart';
 
 class CoffeeView extends StatefulWidget {
   @override
@@ -19,16 +18,6 @@ class _CoffeeViewState extends State<CoffeeView> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Kaffeemaschine"),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.vpn_key),
-            color: studiAppWhite,
-            onPressed: () {
-              globals.isLoggedIn = false;
-              setState(() {});
-            },
-          ),
-        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +32,9 @@ class _CoffeeViewState extends State<CoffeeView> {
           Divider(
             height: 20,
           ),
-          if (globals.isLoggedIn) _loggedInBar(),
+          //_testButtonBar(),
+          if (globals.isLoggedIn)
+            _loggedInBar(),
         ],
       ),
     );
@@ -76,6 +67,36 @@ class _CoffeeViewState extends State<CoffeeView> {
             postState(40);
           },
           child: const Text("Defekt!"),
+        ),
+      ],
+    );
+  }
+
+  Widget _testButtonBar() {
+    return ButtonBar(
+      alignment: MainAxisAlignment.center,
+      children: <Widget>[
+        RaisedButton(
+          onPressed: () {
+            globals.isLoggedIn = true;
+            print(globals.isLoggedIn);
+            setState(() {});
+          },
+          child: const Text("true"),
+        ),
+        RaisedButton(
+          onPressed: () {
+            globals.isLoggedIn = false;
+            print(globals.isLoggedIn);
+            setState(() {});
+          },
+          child: const Text("false"),
+        ),
+        RaisedButton(
+          onPressed: () {
+            setState(() {});
+          },
+          child: const Text("setState"),
         ),
       ],
     );
