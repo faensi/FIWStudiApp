@@ -18,7 +18,7 @@ class _FSnewsViewState extends State<FSnewsView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("FS News View"),
+        title: Text("FSNews"),
       ),
       body: ListView.builder(
         itemCount: globals.newsData == null
