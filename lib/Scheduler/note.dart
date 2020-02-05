@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 
+
 class Note {
   int sem = 1; // 1-7
   String degreeProgram = "{programm}"; // bec, bin, bwi, mis
@@ -10,7 +11,7 @@ class Note {
   var q = ""; // bestimmte Query, nur für eventuelle spätere Updates
 
 // Kurzform des Konstruktors mit this.x=x
-  Note(this.sem, this.degreeProgram, this.offset, this.insertSize);
+  Note(this.sem, this.degreeProgram, this.insertSize);
 
   Future<List<Course>> getCourseList() async {
 // ========== Schritt 1 - REST-API ansprechen und Liste aller weiteren möglichen Routes ziehen ==========
@@ -48,15 +49,9 @@ class Note {
 
 // ========== Schritt 3 - Attribute für das Filtern der Anfrage vorbereiten ==========
 
-    var classesFilter = "?q&semester=" +
-        sem.toString() +
-        "&program=" +
-        degreeProgram +
-        "&offset=" +
-        offset.toString() +
-        "&size=" +
-        insertSize.toString();
+    var classesFilter = getNextUrl(this.offset, this.sem, this.degreeProgram, this.insertSize);
     String ergebnisUrl = urlClasses + classesFilter;
+
 
     http.Response responseClasses = await http.get(
       Uri.encodeFull(ergebnisUrl),
@@ -73,37 +68,74 @@ class Note {
       print("Unbekanter Fehler" + responseClasses.statusCode.toString());
     }
 
-    var jsonResult = jsonDecode(utf8.decode(arrayResult));
-    List<List<String>> resultList = new List(insertSize);
 
+    var jsonResult;
+    bool empty = false;
+    do{
+      // raise offset
+      this.offset += insertSize;
+      ergebnisUrl = urlClasses + getNextUrl(this.offset, this.sem, this.degreeProgram, this.insertSize);
+      http.Response responseClasses2 = await http.get(
+        Uri.encodeFull(ergebnisUrl),
+        headers: {
+          "Accept": ""
+        }, // Anmerkung: automatisches Ziehen des MIME-Types generiert einen 400 Fehler, daher "Notlösung"
+      );
+      if(responseClasses2.statusCode == 200) {
+        if ( responseClasses2.bodyBytes.length < 4) empty = true;
+        else {
+          if(jsonResult==null) jsonResult = jsonDecode(utf8.decode(arrayResult));
+          else jsonResult += jsonDecode(utf8.decode(arrayResult));
+        }
+        }
+      else{
+        print("Unbekanter Fehler" + responseClasses.statusCode.toString());
+      }
+    }while(!empty);
+
+
+
+    List<List<String>> resultList = new List(jsonResult.length);
+  bool doubled = false;
     for (int i = 0; i < jsonResult.length; i++) {
       //Abfrage ob einmaliges Ereignis (ID = 90...) , dann überspringen
       //Abfrage um sicherzustellen, dass nur Kurse aus dem Studiengang angezeigt werden (Any wird ausgefiltert)
       if (jsonResult[i]["id"].toString().codeUnitAt(0).toString() == '57' &&
               jsonResult[i]["id"].toString().codeUnitAt(1).toString() == '48' ||
-          jsonResult[i]["studyGroupsToShow"]
-                  .contains(degreeProgram.toUpperCase() + sem.toString()) ==
-              false) {
+          jsonResult[i]["studyGroupsToShow"].contains(degreeProgram.toUpperCase() + sem.toString()) == false) {
         continue;
       }
 
       // Anmerkung: über    jsonResult[i]["name"]["href"] Zugriff auf URL für Raum & Zeit
 
+      if(i==0){
+      }else{
+        for(int k=0; k<i;k++)
+        if(resultList[k]!=null && resultList[k].contains(jsonResult[i]["name"])){
+            print("triggered");
+          doubled =true;
+        }}
+
+      if(doubled){
+        doubled=false;
+        continue;
+      }
+
       resultList[i] = [
         jsonResult[i]["name"],
         jsonResult[i]["lecturerNamesToShow"]
       ];
-      print(resultList[i]);
 
       // Anmerkung: mit jsonResult[i]["icalUrl"]["href"] bekomme ich die URL zu einer ical.Datei
     }
-    final filteredList = _convertToListWithCourses(resultList);
+
+    final filteredList = _convertToListWithLectures(resultList);
 
     if (filteredList.isEmpty) return List<Course>();
     return filteredList;
   }
 
-  static List<Course> _convertToListWithCourses(List<List<String>> list) {
+  static List<Course> _convertToListWithLectures(List<List<String>> list) {
     List<Course> listWithValues = [];
     for (final li in list) {
       if (li == null || li[0] == null || li[1] == null) continue;
@@ -112,6 +144,19 @@ class Note {
     }
     return listWithValues;
   }
+
+  static String getNextUrl(int offset, int sem, String degreeProgram, int insertSize  ){
+  var classesFilter = "?q&semester=" +
+      sem.toString() +
+      "&program=" +
+      degreeProgram +
+      "&offset=" +
+      offset.toString() +
+      "&size=" +
+      insertSize.toString();
+  return classesFilter;
+  }
+
 }
 
 class Course {
