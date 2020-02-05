@@ -4,6 +4,8 @@ import 'package:FIW_Studi_App/FSnews/fsnews_card.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/UI/nav_drawer.dart';
 import 'package:FIW_Studi_App/KaimWebview/kaim_webview_card.dart';
+import 'Rooms/rooms1_card.dart';
+import 'Rooms/rooms2_card.dart';
 import 'style.dart';
 
 class Startview extends StatelessWidget {
@@ -27,6 +29,8 @@ class Startview extends StatelessWidget {
             FSnewsCard(),
             ScheduleCard(),
             KaimWVCard(),
+            Rooms1Card(),
+            Rooms2Card(),
           ],
         ),
       ),
