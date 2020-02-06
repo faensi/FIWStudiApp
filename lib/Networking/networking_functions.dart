@@ -53,21 +53,24 @@ String _basicAuth(username, password) {
 
 Future<String> getNewsData() async {
   http.Response response = await http.get(
-      Uri.encodeFull('https://apistaging.fiw.fhws.de/studi-app/api/news'),
-      headers: {
-        /*
+    Uri.encodeFull('https://apistaging.fiw.fhws.de/studi-app/api/news'),
+    headers: {
+      /*
         HttpHeaders.authorizationHeader:
             basicAuth(globals.kNumber, globals.password),
         */
-        "Accept": "application/json"
-      });
+      "Accept": "application/json"
+    },
+  );
   globals.newsData = jsonDecode(utf8.decode(response.bodyBytes));
   return "Success!";
 }
 
 Future<String> getCData() async {
-  http.Response response = await http.get(Uri.encodeFull(_coffeeGetUrl),
-      headers: {"Accept": "application/json"});
+  http.Response response = await http.get(
+    Uri.encodeFull(_coffeeGetUrl),
+    headers: {"Accept": "application/json"},
+  );
   globals.cData = jsonDecode(response.body);
   globals.cState = globals.cData["state"].toString();
   globals.cLastTime = DateTime.parse(globals.cData["statusTime"]);
@@ -76,7 +79,7 @@ Future<String> getCData() async {
   return "Success!";
 }
 
-void launchURL(BuildContext context) async {
+Future<void> launchURL(BuildContext context) async {
   try {
     await launch(
       'https://unicorns.diamonds/vp',
