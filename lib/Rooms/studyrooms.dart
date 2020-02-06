@@ -1,7 +1,11 @@
 import 'dart:convert';
-import 'package:FIW_Studi_App/Rooms/Model/booking.dart';
-import 'package:FIW_Studi_App/Rooms/Model/room.dart';
+import 'dart:io';
+
+import 'package:FIW_Studi_App/Rooms/bookings.dart';
+import 'package:FIW_Studi_App/model/Booking.dart';
+import 'package:FIW_Studi_App/model/Room.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:http/http.dart' as http;
 
 class Rooms extends StatefulWidget {
@@ -32,8 +36,7 @@ class _RoomsState extends State<Rooms> {
                       //text
                       Padding(
                         padding: const EdgeInsets.all(9.0),
-                        child: Text(
-                          heading,
+                        child: Text(heading,
                           style: TextStyle(
                             color: new Color(color),
                             fontSize: 24.0,
@@ -56,53 +59,63 @@ class _RoomsState extends State<Rooms> {
                       )
                     ],
                   ),
-                ]),
+                ]
+            ),
           ),
-        ));
+        )
+    );
   }
+
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Study Rooms',
+        title: Text('Study Rooms',
           style: TextStyle(
             color: Colors.black,
           ),
         ),
+
       ),
-      body: FutureBuilder(
+      body:
+      FutureBuilder(
         future: getRoomData(),
         builder: (context, projectSnap) {
           return ListView.builder(
             itemCount: roomDetails == null ? 0 : roomDetails.length,
             itemBuilder: (context, index) {
-              return Card(
-                  child: ListTile(
-                title: Text(roomDetails[index].roomName + "\n",
+            return Card(
+                child: ListTile(
+                  title: Text(roomDetails[index].roomName + "\n",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 25.0, color: Colors.black)),
+                  subtitle: Text(checkTime(index),
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25.0, color: Colors.black)),
-                subtitle: Text(
-                  checkTime(index),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 25.0,
-                      color:
-                          _getColorFromHex(roomDetails[index].roomStatusColor)),
-                ),
-              ));
-            },
-          );
-        },
-      ),
-    );
+                    style: TextStyle(fontSize: 25.0,
+                        color: _getColorFromHex(
+                            roomDetails[index].roomStatusColor)),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RadioWidgetDemo()),
+                    );
+                  },
+                    )
+            );
+                  },
+                );
+          })
+      );
   }
 
+
   Future<List<Room>> getRoomData() async {
-    http.Response response = await http.get(Uri.encodeFull(
-        'https://apistaging.fiw.fhws.de/fiwis2/api/roomstatuses/'));
+    http.Response response = await http.get(
+        Uri.encodeFull(
+            'https://apistaging.fiw.fhws.de/fiwis2/api/roomstatuses/'));
     var roomsData = jsonDecode(utf8.decode(response.bodyBytes));
 
     for (var bookval in roomsData) {
@@ -127,7 +140,8 @@ class _RoomsState extends State<Rooms> {
   }
 
   Future<List<Booking>> getBookingData(Room room) async {
-    http.Response response = await http.get(Uri.encodeFull(room.bookingUrl));
+    http.Response response = await http.get(
+        Uri.encodeFull(room.bookingUrl));
     var bookData = jsonDecode(utf8.decode(response.bodyBytes));
 
     for (var bookval in bookData) {
@@ -172,4 +186,5 @@ class _RoomsState extends State<Rooms> {
     }
     return "Room is free";
   }
+
 }

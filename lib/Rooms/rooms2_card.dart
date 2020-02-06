@@ -1,5 +1,4 @@
 import 'package:FIW_Studi_App/Rooms/studyrooms.dart';
-import 'package:FIW_Studi_App/Scheduler/schedule_view.dart';
 import 'package:flutter/material.dart';
 
 class Rooms2Card extends StatelessWidget {
