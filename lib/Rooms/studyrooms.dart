@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:FIW_Studi_App/Rooms/bookings.dart';
 import 'package:FIW_Studi_App/model/Booking.dart';
 import 'package:FIW_Studi_App/model/Room.dart';
 import 'package:flutter/material.dart';
@@ -85,21 +86,29 @@ class _RoomsState extends State<Rooms> {
           return ListView.builder(
             itemCount: roomDetails == null ? 0 : roomDetails.length,
             itemBuilder: (context, index) {
-              return Card(
-                  child: ListTile(
-                    title: Text(roomDetails[index].roomName + "\n",
+            return Card(
+                child: ListTile(
+                  title: Text(roomDetails[index].roomName + "\n",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 25.0, color: Colors.black)),
+                  subtitle: Text(checkTime(index),
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25.0, color: Colors.black)),
-                    subtitle: Text(checkTime(index),
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 25.0, color: _getColorFromHex(roomDetails[index].roomStatusColor)),
-              ),
-              ));
-            },
-          );
-        },
-      ),
-    );
+                    style: TextStyle(fontSize: 25.0,
+                        color: _getColorFromHex(
+                            roomDetails[index].roomStatusColor)),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RadioWidgetDemo()),
+                    );
+                  },
+                    )
+            );
+                  },
+                );
+          })
+      );
   }
 
 
