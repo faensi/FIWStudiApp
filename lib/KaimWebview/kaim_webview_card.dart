@@ -14,12 +14,6 @@ class _KaimWVState extends State<KaimWVCard> {
     return InkWell(
       onTap: () {
         net.launchURL(context);
-/*        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => KaimWView()),
-
-        );
- */
       },
       child: Card(
         clipBehavior: Clip.antiAlias,

@@ -52,8 +52,7 @@ class _ScheduleDetailState extends State<ScheduleDetail> {
   }
 
   Future<void> _initData() async {
-    final note = Note(globals.semester, globals.degreeProgramm, globals.offset,
-        globals.insertSize);
+    final note = Note(globals.semester, globals.degreeProgramm, globals.insertSize);
     final courseList = await note.getCourseList();
     setState(() {
       _courseList = courseList;

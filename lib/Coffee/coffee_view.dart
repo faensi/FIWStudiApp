@@ -4,6 +4,7 @@ import 'package:FIW_Studi_App/Coffee/coffee_text.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/Networking/networking_functions.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
+import 'package:FIW_Studi_App/Networking/authorization.dart' as auth;
 
 class CoffeeView extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _CoffeeViewState extends State<CoffeeView> {
           IconButton(
             icon: Icon(Icons.vpn_key),
             onPressed: () {
-              globals.isLoggedIn = false;
+              auth.logout();
               setState(() {});
             },
           ),

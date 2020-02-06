@@ -1,8 +1,10 @@
 import 'package:FIW_Studi_App/globals.dart' as globals;
+import 'package:flutter/cupertino.dart';
 
-var body;
+import '../helper_functions.dart';
 
 void getAInfo() {
+  //---------unfinished because waiting for Backend-Auth-Feature
 /*
 Future<http.Response> getAInfo() async {
 
@@ -25,8 +27,16 @@ Future<http.Response> getAInfo() async {
    */
 }
 
-void checkAuth() {
+Future<void> login() async {
   getAInfo();
   //instead of true -> json... something... body... something...== something
   if (true) globals.isLoggedIn = true;
+  await HelperFunctions.storeLoginInSharedPref();
+}
+
+Future<void> logout() async {
+  globals.isLoggedIn = false;
+  globals.kNumber = "";
+  globals.password = "";
+  await HelperFunctions.storeLoginInSharedPref();
 }

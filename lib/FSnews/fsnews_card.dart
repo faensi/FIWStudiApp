@@ -11,7 +11,7 @@ class FSnewsCard extends StatelessWidget {
           MaterialPageRoute(builder: (context) => FSnewsView()),
         );
       },
-      child: new Card(
+      child: Card(
         clipBehavior: Clip.antiAlias,
         child: Column(
           // Anordnung der Elemente, entweder Horizontal oder Vertikal

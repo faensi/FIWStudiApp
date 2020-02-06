@@ -7,7 +7,7 @@ import 'package:flutter_custom_tabs/flutter_custom_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/helper_functions.dart';
 
-final String coffeeGetUrl =
+final String _coffeeGetUrl =
     "https://apistaging.fiw.fhws.de/studi-app/api/coffee-machine/getCurrentState";
 
 Future<http.Response> postNews(String title, String text) async {
@@ -25,7 +25,7 @@ Future<http.Response> postNews(String title, String text) async {
   var body = json.encode(data);
   var response = await http.post(url,
       headers: {
-        HttpHeaders.authorizationHeader: basicAuth(username, password),
+        HttpHeaders.authorizationHeader: _basicAuth(username, password),
         "Content-Type": "application/json"
       },
       body: body);
@@ -47,7 +47,7 @@ Future<http.Response> postState(int pState) async {
   return response;
 }
 
-String basicAuth(username, password) {
+String _basicAuth(username, password) {
   return 'Basic ' + base64Encode(utf8.encode('$username:$password'));
 }
 
@@ -55,8 +55,10 @@ Future<String> getNewsData() async {
   http.Response response = await http.get(
       Uri.encodeFull('https://apistaging.fiw.fhws.de/studi-app/api/news'),
       headers: {
+        /*
         HttpHeaders.authorizationHeader:
             basicAuth(globals.kNumber, globals.password),
+        */
         "Accept": "application/json"
       });
   globals.newsData = jsonDecode(utf8.decode(response.bodyBytes));
@@ -64,7 +66,7 @@ Future<String> getNewsData() async {
 }
 
 Future<String> getCData() async {
-  http.Response response = await http.get(Uri.encodeFull(coffeeGetUrl),
+  http.Response response = await http.get(Uri.encodeFull(_coffeeGetUrl),
       headers: {"Accept": "application/json"});
   globals.cData = jsonDecode(response.body);
   globals.cState = globals.cData["state"].toString();

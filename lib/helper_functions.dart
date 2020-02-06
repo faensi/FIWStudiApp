@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:FIW_Studi_App/globals.dart' as globals;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HelperFunctions {
   static MaterialColor createMaterialColor(Color color) {
@@ -50,5 +51,26 @@ class HelperFunctions {
     } else {
       print("Error");
     }
+  }
+
+  static Future<void> loadLoginFromSharedPref() async {
+    print("loading from shared prefs");
+    final prefs = await SharedPreferences.getInstance();
+
+    globals.kNumber = prefs.getString('kNumber') ?? "";
+    globals.password = prefs.getString('password') ?? "";
+    globals.isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+
+    print("loaded from shared prefs");
+  }
+
+  static Future<void> storeLoginInSharedPref() async {
+    print("saving to shared prefs");
+    final prefs = await SharedPreferences.getInstance();
+
+    await prefs.setString('kNumber', globals.kNumber);
+    await prefs.setString('password', globals.password);
+    await prefs.setBool('isLoggedIn', globals.isLoggedIn);
+    print("saved to shared prefs");
   }
 }
