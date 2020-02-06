@@ -1,5 +1,6 @@
-import 'package:FIW_Studi_App/Model/Booking.dart';
 import 'package:flutter/material.dart';
+
+import 'Model/Booking.dart';
 
 class RadioWidgetDemo extends StatefulWidget {
   static Future<List<Booking>> bookings;

@@ -1,4 +1,4 @@
-import 'booking.dart';
+import 'Booking.dart';
 
 class Room {
   String bookingUrl;
@@ -13,6 +13,7 @@ class Room {
   String roomStatusColor;
   String roomStatusDisplay;
   String self;
+  String campus;
   List<Booking> list;
 
   Room(
@@ -27,5 +28,6 @@ class Room {
       this.roomStatus,
       this.roomStatusColor,
       this.roomStatusDisplay,
-      this.self);
+      this.self,
+      this.campus);
 }

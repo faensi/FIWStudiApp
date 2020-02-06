@@ -1,14 +1,13 @@
 import 'dart:convert';
-import 'dart:io';
-
-import 'package:FIW_Studi_App/Rooms/bookings.dart';
-import 'package:FIW_Studi_App/model/Booking.dart';
-import 'package:FIW_Studi_App/model/Room.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:http/http.dart' as http;
+import 'dart:async';
+
+import 'Model/Booking.dart';
+import 'Model/Room.dart';
 
 class Rooms extends StatefulWidget {
+
   @override
   _RoomsState createState() => _RoomsState();
 }
@@ -36,7 +35,8 @@ class _RoomsState extends State<Rooms> {
                       //text
                       Padding(
                         padding: const EdgeInsets.all(9.0),
-                        child: Text(heading,
+                        child: Text(
+                          heading,
                           style: TextStyle(
                             color: new Color(color),
                             fontSize: 24.0,
@@ -59,10 +59,10 @@ class _RoomsState extends State<Rooms> {
                       )
                     ],
                   ),
-                ]
+                ],
             ),
           ),
-        )
+        ),
     );
   }
 
@@ -72,15 +72,15 @@ class _RoomsState extends State<Rooms> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Study Rooms',
+        title: Text(
+          'Study Rooms',
           style: TextStyle(
             color: Colors.black,
           ),
         ),
 
       ),
-      body:
-      FutureBuilder(
+      body: FutureBuilder(
         future: getRoomData(),
         builder: (context, projectSnap) {
           return ListView.builder(
@@ -97,13 +97,7 @@ class _RoomsState extends State<Rooms> {
                         color: _getColorFromHex(
                             roomDetails[index].roomStatusColor)),
                   ),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => RadioWidgetDemo()),
-                    );
-                  },
-                    )
+                  )
             );
                   },
                 );
@@ -131,7 +125,8 @@ class _RoomsState extends State<Rooms> {
           bookval['roomStatus'],
           bookval['roomStatusColor'],
           bookval['roomStatusDisplay'],
-          bookval['self']);
+          bookval['self'],
+      bookval['campus']);
       getBookingData(room);
       room.list = getBookingData(room) as List<Booking>;
       roomDetails.add(room);
