@@ -8,7 +8,7 @@ class Rooms2Card extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Scaffold()),
+          MaterialPageRoute(builder: (context) => Rooms()),
         );
       },
       child: Card(
