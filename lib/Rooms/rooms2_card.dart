@@ -19,7 +19,7 @@ class Rooms2Card extends StatelessWidget {
           children: <Widget>[
             AspectRatio(
               aspectRatio: 18.0 / 11.0,
-              child: Image.asset('Images/Room_booking_system.png'),
+              child: Image.asset('Images/room_booking_system.png'),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),

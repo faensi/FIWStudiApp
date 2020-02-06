@@ -19,7 +19,7 @@ class FSnewsCard extends StatelessWidget {
           children: <Widget>[
             AspectRatio(
               aspectRatio: 18.0 / 11.0,
-              child: Image.asset('Images/FSNews.png'),
+              child: Image.asset('Images/fs_news.png'),
             ),
             Padding(
               // genaue Eckdaten von von allen seiten wie groß das feld sein soll

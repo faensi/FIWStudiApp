@@ -33,19 +33,19 @@ class HelperFunctions {
 
   static void setCoffeeImageByState() {
     if (globals.cState == "10") {
-      globals.cofImageAdr = "Images/Coffee_full.png";
+      globals.cofImageAdr = "Images/coffee_full.png";
       globals.cofStatus =
           "Kaffee gemacht" + "\n" + HelperFunctions.displayTime();
     } else if (globals.cState == "20") {
-      globals.cofImageAdr = "Images/Coffee_shutoff.png";
+      globals.cofImageAdr = "Images/coffee_shutoff.png";
       globals.cofStatus =
           "Kaffeemaschine aus" + "\n" + HelperFunctions.displayTime();
     } else if (globals.cState == "30") {
-      globals.cofImageAdr = "Images/Coffee_empty.png";
+      globals.cofImageAdr = "Images/coffee_empty.png";
       globals.cofStatus =
           "Kaffeemaschine leer" + "\n" + HelperFunctions.displayTime();
     } else if (globals.cState == "40") {
-      globals.cofImageAdr = "Images/Coffee_broken.png";
+      globals.cofImageAdr = "Images/coffee_broken.png";
       globals.cofStatus =
           "Kaffeemaschine defekt" + "\n" + HelperFunctions.displayTime();
     } else {
